@@ -1,0 +1,6 @@
+2024-07-11 14:42:33.010	info	Message	{"routerPrefix": ""}
+2024-07-11 14:42:33.011	info	register swagger handler
+2024-07-11 14:42:33.011	info	server run success on 	{"address": ":0"}
+2024-07-11 14:43:04.449	info	Message	{"routerPrefix": ""}
+2024-07-11 14:43:04.450	info	register swagger handler
+2024-07-11 14:43:04.450	info	server run success on 	{"address": ":0"}

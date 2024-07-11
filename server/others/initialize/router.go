@@ -5,10 +5,12 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
+	"github.com/slyrx/gin_exam_system/server/others/middleware"
 	"go.uber.org/zap"
 
 	"github.com/slyrx/gin_exam_system/docs"
 	"github.com/slyrx/gin_exam_system/server/others/global"
+	"github.com/slyrx/gin_exam_system/server/router"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
@@ -48,6 +50,8 @@ func Routers() *gin.Engine {
 		// 这对于开发和调试非常有用。
 	}
 
+	systemRouter := router.RouterGroupApp.System
+
 	Routers.StaticFS(global.GES_CONFIG.Local.StorePath, justFilesFilesystem{http.Dir(global.GES_CONFIG.Local.StorePath)})
 	// 这一行代码为 Gin 路由器添加一个静态文件服务。
 	// global.GVA_CONFIG.Local.StorePath 是静态文件存储路径。
@@ -70,6 +74,21 @@ func Routers() *gin.Engine {
 	)
 
 	global.GES_LOG.Info("register swagger handler")
+
+	PublicGroup := Routers.Group(global.GES_CONFIG.System.RouterPrefix)
+	{
+		PublicGroup.GET("/health", func(c *gin.Context) {
+			c.JSON(http.StatusOK, "ok")
+		})
+	}
+	{
+		systemRouter.InitBaseRouter(PublicGroup) // 注册基础功能路由 不做鉴权
+	}
+	PrivateGroup := Routers.Group(global.GES_CONFIG.System.RouterPrefix)
+	PrivateGroup.Use(middleware.JWTAuth()).Use(middleware.CasbinHandler())
+	{
+		systemRouter.InitJwtRouter(PrivateGroup) // jwt相关路由
+	}
 
 	return Routers
 }
