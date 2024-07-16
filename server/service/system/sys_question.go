@@ -7,6 +7,7 @@ import (
 	"github.com/slyrx/gin_exam_system/server/model/common/response"
 	systemMod "github.com/slyrx/gin_exam_system/server/model/system"
 	"github.com/slyrx/gin_exam_system/server/others/global"
+	"github.com/slyrx/gin_exam_system/server/others/utils"
 	"go.uber.org/zap"
 )
 
@@ -16,12 +17,22 @@ var QuestionServiceApp = new(QuestionService)
 
 func (questionService *QuestionService) GetCountQuestionsBySubject(subjectID int) (int64, error) {
 	var count int64
-	err := global.GES_DB.Debug().Model(&systemMod.Question{}).
-		Where("deleted = ? AND subject_id = ?", false, subjectID).
-		Count(&count).
-		Error
-	if err != nil {
-		return 0, err
+	if subjectID == 0 {
+		err := global.GES_DB.Debug().Model(&systemMod.Question{}).
+			Where("deleted = ?", false).
+			Count(&count).
+			Error
+		if err != nil {
+			return 0, err
+		}
+	} else {
+		err := global.GES_DB.Debug().Model(&systemMod.Question{}).
+			Where("deleted = ? AND subject_id = ?", false, subjectID).
+			Count(&count).
+			Error
+		if err != nil {
+			return 0, err
+		}
 	}
 
 	return count, nil
@@ -30,15 +41,28 @@ func (questionService *QuestionService) GetCountQuestionsBySubject(subjectID int
 func (questionService *QuestionService) GetQuestionsBySubject(subjectID int, limit int, pageIndex int) ([]systemMod.Question, error) {
 	var questions []systemMod.Question
 	offset := (pageIndex - 1) * limit
-	err := global.GES_DB.Debug().
-		Where("deleted = ? AND subject_id = ?", false, subjectID).
-		Order("err_count desc").
-		Limit(limit).
-		Offset(offset).
-		Find(&questions).
-		Error
-	if err != nil {
-		return nil, err
+	if subjectID == 0 {
+		err := global.GES_DB.Debug().
+			Where("deleted = ?", false).
+			Order("err_count desc").
+			Limit(limit).
+			Offset(offset).
+			Find(&questions).
+			Error
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		err := global.GES_DB.Debug().
+			Where("deleted = ? AND subject_id = ?", false, subjectID).
+			Order("err_count desc").
+			Limit(limit).
+			Offset(offset).
+			Find(&questions).
+			Error
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	return questions, nil
@@ -59,6 +83,7 @@ func (questionService *QuestionService) MapToPageQuestionResult(questions []syst
 	result.EndRow = result.StartRow + result.Size - 1
 
 	// 设置导航页码
+	global.GES_LOG.Info("exam7", zap.Any("pageNum", pageNum), zap.Any("total", total))
 	result.NavigatePages = 8 // 假设我们想显示8个导航页码
 	result.NavigatePageNums = QuestionServiceApp.calculateNavigatePageNums(pageNum, result.Pages, result.NavigatePages)
 	result.NavigateFirstPage = result.NavigatePageNums[0]
@@ -86,6 +111,8 @@ func (questionService *QuestionService) calculateNavigatePageNums(pageNum, total
 	var navigatePageNums []int
 	startNum := pageNum - navigatePages/2
 	endNum := pageNum + navigatePages/2
+	global.GES_LOG.Info("exam6", zap.Any("pageNum", pageNum), zap.Any("totalPages", totalPages), zap.Any("navigatePages", navigatePages))
+	global.GES_LOG.Info("exam6", zap.Any("startNum", startNum), zap.Any("endNum", startNum))
 
 	if startNum < 1 {
 		startNum = 1
@@ -104,6 +131,7 @@ func (questionService *QuestionService) calculateNavigatePageNums(pageNum, total
 		navigatePageNums = append(navigatePageNums, i)
 	}
 
+	global.GES_LOG.Info("exam6", zap.Any("calculateNavigatePageNums", navigatePageNums))
 	return navigatePageNums
 }
 
@@ -155,7 +183,7 @@ func (questionService *QuestionService) MapSourceToTargetQuestion(src systemMod.
 	} else {
 		json.Unmarshal([]byte(frameTextContent), &questionObject)
 		dst.ShortTitle = questionObject.TitleContent
-		global.GES_LOG.Info("ShortTitle", zap.Any("ShortTitle", frameTextContent))
+		global.GES_LOG.Info("ShortTitle", zap.Any("ShortTitle", questionObject.TitleContent))
 	}
 
 	return dst
@@ -164,6 +192,7 @@ func (questionService *QuestionService) MapSourceToTargetQuestion(src systemMod.
 func (questionService *QuestionService) selectTextContentByID(id int) (s string, err error) {
 	examPaperTextContent := &systemMod.ExamPaperTextContent{}
 	err = global.GES_DB.Debug().Where("id = ?", id).First(examPaperTextContent).Error
-	s = examPaperTextContent.Content
+	s = utils.Clear(examPaperTextContent.Content)
+	global.GES_LOG.Info("selectTextContentByID", zap.Any("s", s))
 	return
 }

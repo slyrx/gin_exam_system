@@ -4,6 +4,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/slyrx/gin_exam_system/server/model/common/response"
 	systemMod "github.com/slyrx/gin_exam_system/server/model/system/request"
+	"github.com/slyrx/gin_exam_system/server/others/global"
+	"go.uber.org/zap"
 )
 
 type QuestionApi struct{}
@@ -24,6 +26,7 @@ func (e *QuestionApi) GetPageInfo(c *gin.Context) {
 
 	// 查询题目
 	questions, err := questionService.GetQuestionsBySubject(query.SubjectID, query.PageSize, query.PageIndex)
+	global.GES_LOG.Info("questions", zap.Any("questions", questions))
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
 		return
@@ -33,6 +36,7 @@ func (e *QuestionApi) GetPageInfo(c *gin.Context) {
 	total := count // 总记录数
 
 	respQuestions := questionService.MapSourceToTargetQuestions(questions)
+	global.GES_LOG.Info("exam8", zap.Any("total", total))
 	pageResult := questionService.MapToPageQuestionResult(questions, respQuestions, int(total), query.PageIndex, query.PageSize)
 	// 返回结果
 	response.OkWithDetailedExam(pageResult, c)
