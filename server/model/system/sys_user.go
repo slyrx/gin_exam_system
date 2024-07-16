@@ -1,6 +1,8 @@
 package system
 
 import (
+	"time"
+
 	"github.com/gofrs/uuid/v5"
 	"github.com/slyrx/gin_exam_system/server/others/global"
 )
@@ -24,4 +26,162 @@ type SysUser struct {
 
 func (SysUser) TableName() string {
 	return "sys_users"
+}
+
+type SysExamUser struct {
+	ID       int
+	UserName string
+}
+
+// ExamPaperSubmitVM 定义了提交试卷的结构体
+type ExamPaperSubmitVM struct {
+	QuestionID  *int                    `json:"questionId"` // 使用指针以允许 null 值
+	DoTime      int                     `json:"doTime"`
+	AnswerItems []ExamPaperSubmitItemVM `json:"answerItems"`
+	ID          int                     `json:"id"`
+}
+
+// ExamPaperSubmitItemVM 定义了每个回答项的结构体
+type ExamPaperSubmitItemVM struct {
+	QuestionID   int      `json:"questionId"`
+	Content      string   `json:"content"`
+	ContentArray []string `json:"contentArray"`
+	Completed    bool     `json:"completed"`
+	ItemOrder    int      `json:"itemOrder"`
+}
+
+type ExamPaperAnswerInfo struct {
+	ExamPaper                        ExamPaper
+	ExamPaperAnswer                  ExamPaperAnswer
+	ExamPaperQuestionCustomerAnswers []ExamPaperQuestionCustomerAnswer
+}
+
+type ExamPaperAnswer struct {
+	ExamPaperID     int       `gorm:"column:exam_paper_id"`
+	PaperName       string    `gorm:"column:paper_name"`
+	PaperType       int       `gorm:"column:paper_type"`
+	SubjectID       int       `gorm:"column:subject_id"`
+	SystemScore     int       `gorm:"column:system_score"`
+	UserScore       int       `gorm:"column:user_score"`
+	PaperScore      int       `gorm:"column:paper_score"`
+	QuestionCorrect int       `gorm:"column:question_correct"`
+	QuestionCount   int       `gorm:"column:question_count"`
+	DoTime          int       `gorm:"column:do_time"`
+	Status          int       `gorm:"column:status"`
+	CreateUser      int       `gorm:"column:create_user"`
+	CreateTime      time.Time `gorm:"column:create_time"`
+	TaskExamID      int
+}
+
+// TableName 设置表名
+func (ExamPaperAnswer) TableName() string {
+	return "t_exam_paper_answer"
+}
+
+// ExamPaper 结构体定义
+type ExamPaper struct {
+	ID                 int       `gorm:"column:id"`
+	Name               string    `gorm:"column:name"`
+	SubjectID          int       `gorm:"column:subject_id"`
+	PaperType          int       `gorm:"column:paper_type"`
+	GradeLevel         int       `gorm:"column:grade_level"`
+	Score              int       `gorm:"column:score"`
+	QuestionCount      int       `gorm:"column:question_count"`
+	SuggestTime        int       `gorm:"column:suggest_time"`
+	LimitStartTime     time.Time `gorm:"column:limit_start_time"`
+	LimitEndTime       time.Time `gorm:"column:limit_end_time"`
+	FrameTextContentID int       `gorm:"column:frame_text_content_id"`
+	CreateUser         int       `gorm:"column:create_user"`
+	CreateTime         time.Time `gorm:"column:create_time"`
+	Deleted            []byte    `gorm:"column:deleted"`
+	TaskExamID         int       `gorm:"column:task_exam_id"`
+}
+
+// TableName 指定表名
+func (ExamPaper) TableName() string {
+	return "t_exam_paper"
+}
+
+type ExamPaperTextContent struct {
+	ID         int       `gorm:"column:id"`
+	Content    string    `gorm:"column:content"`
+	CreateTime time.Time `gorm:"column:create_time"`
+}
+
+func (ExamPaperTextContent) TableName() string {
+	return "t_text_content"
+}
+
+type ExamPaperTitleItemObject struct {
+	Name          string         `json:"name"`
+	QuestionItems []QuestionItem `json:"questionItems"`
+}
+
+type QuestionItem struct {
+	ID        int `json:"id"`
+	ItemOrder int `json:"itemOrder"`
+}
+
+type ExamPaperQuestionCustomerAnswer struct {
+	QuestionID            int       `gorm:"column:question_id"`
+	QuestionScore         int       `gorm:"column:question_score"`
+	SubjectID             int       `gorm:"column:subject_id"`
+	CreateTime            time.Time `gorm:"column:create_time"`
+	CreateUser            int       `gorm:"column:create_user"`
+	TextContentID         *int      `gorm:"column:text_content_id"`
+	ExamPaperID           int       `gorm:"column:exam_paper_id"`
+	QuestionType          int       `gorm:"column:question_type"`
+	Answer                *string   `gorm:"column:answer"`
+	CustomerScore         int       `gorm:"column:customer_score"`
+	ExamPaperAnswerID     int       `gorm:"column:exam_paper_answer_id"`
+	DoRight               bool      `gorm:"column:do_right"`
+	QuestionTextContentID int       `gorm:"column:question_text_content_id"`
+	ItemOrder             int       `gorm:"column:item_order"`
+	ErrCount              int       `gorm:"column:err_count"`
+}
+
+// TableName 设置表名
+func (ExamPaperQuestionCustomerAnswer) TableName() string {
+	return "t_exam_paper_question_customer_answer"
+}
+
+// Question 结构体
+type Question struct {
+	ID                int       `gorm:"column:id"`
+	QuestionType      int       `gorm:"column:question_type"`
+	SubjectID         int       `gorm:"column:subject_id"`
+	Score             int       `gorm:"column:score"`
+	GradeLevel        string    `gorm:"column:grade_level"`
+	Difficult         string    `gorm:"column:difficult"`
+	Correct           string    `gorm:"column:correct"`
+	InfoTextContentID int       `gorm:"column:info_text_content_id"`
+	CreateUser        string    `gorm:"column:create_user"`
+	Status            string    `gorm:"column:status"`
+	CreateTime        time.Time `gorm:"column:create_time"`
+	Deleted           []byte    `gorm:"column:deleted"`
+	ErrCount          int       `gorm:"column:err_count"`
+}
+
+func (Question) TableName() string {
+	return "t_question"
+}
+
+type UserEventLog struct {
+	UserID     int       `gorm:"column:user_id"`
+	UserName   string    `gorm:"column:user_name"`
+	RealName   string    `gorm:"column:real_name"`
+	Content    string    `gorm:"column:content"`
+	CreateTime time.Time `gorm:"column:create_time"`
+}
+
+// TableName 设置表名
+func (UserEventLog) TableName() string {
+	return "t_user_event_log"
+}
+
+type QuestionObject struct {
+	TitleContent        string        `json:"titleContent"`
+	Analyze             string        `json:"analyze"`
+	QuestionItemObjects []interface{} `json:"questionItemObjects"`
+	Correct             string        `json:"correct"`
 }

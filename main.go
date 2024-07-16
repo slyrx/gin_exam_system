@@ -17,10 +17,13 @@ func main() {
 	initialize.Timer()
 	initialize.DBList()
 	if global.GES_DB != nil {
+		global.GES_LOG.Info("exam", zap.String("DB init", "ok"))
 		initialize.RegisterTables() // 初始化表
 		// 程序结束前关闭数据库链接
 		db, _ := global.GES_DB.DB()
 		defer db.Close()
+	} else {
+		global.GES_LOG.Info("exam", zap.String("DB init", "not ok"))
 	}
 
 	core.RunServer()

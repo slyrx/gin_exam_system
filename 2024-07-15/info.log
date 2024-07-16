@@ -1,0 +1,550 @@
+2024-07-15 08:14:25.617	info	exam	{"DB init": "ok"}
+2024-07-15 08:14:25.773	info	register table success
+2024-07-15 08:14:25.774	info	Message	{"routerPrefix": ""}
+2024-07-15 08:14:25.774	info	register swagger handler
+2024-07-15 08:14:25.774	info	server run success on 	{"address": ":8004"}
+2024-07-15 08:15:08.267	info	exam	{"DB init": "ok"}
+2024-07-15 08:15:08.340	info	register table success
+2024-07-15 08:15:08.340	info	Message	{"routerPrefix": ""}
+2024-07-15 08:15:08.341	info	register swagger handler
+2024-07-15 08:15:08.341	info	server run success on 	{"address": ":8004"}
+2024-07-15 08:16:10.161	info	exam	{"": {"questionId":null,"doTime":9,"answerItems":[{"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 08:16:10.372	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 08:16:10.373	info	exam	{"2": 1}
+2024-07-15 08:16:10.373	info	exam	{"DB init": 1334}
+2024-07-15 08:16:10.454	info	exam	{"questionIds": [317, 318]}
+2024-07-15 08:16:10.456	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 08:16:10.456	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 08:16:10.456	info	exam0	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 08:16:10.456	info	exam1	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 08:16:10.456	info	exam1	{"not nil": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 08:16:10.456	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 08:16:10.457	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 08:16:10.457	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 08:16:10.457	info	exam0	{"questions": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 08:16:10.457	info	exam1	{"questions": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 08:16:10.457	info	exam1	{"not nil": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 08:16:10.457	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 08:16:10.457	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 08:16:10.457	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T08:16:10.161934+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"B","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1333,"ItemOrder":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T08:16:10.161934+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"A","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1335,"ItemOrder":2}]}
+2024-07-15 08:16:10.457	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":10,"UserScore":10,"PaperScore":20,"QuestionCorrect":1,"QuestionCount":2,"DoTime":9,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T08:16:10.161934+08:00","TaskExamID":0}}
+2024-07-15 08:46:26.847	info	exam	{"DB init": "ok"}
+2024-07-15 08:46:26.917	info	register table success
+2024-07-15 08:46:26.917	info	Message	{"routerPrefix": ""}
+2024-07-15 08:46:26.918	info	register swagger handler
+2024-07-15 08:46:26.918	info	server run success on 	{"address": ":8004"}
+2024-07-15 08:46:34.691	info	exam	{"": {"questionId":null,"doTime":9,"answerItems":[{"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 08:46:34.775	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 08:46:34.775	info	exam	{"2": 1}
+2024-07-15 08:46:34.775	info	exam	{"DB init": 1334}
+2024-07-15 08:46:34.818	info	exam	{"questionIds": [317, 318]}
+2024-07-15 08:46:34.860	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 08:46:34.860	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 08:46:34.860	info	exam0	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 08:46:34.860	info	exam1	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 08:46:34.861	info	exam1	{"not nil": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 08:46:34.861	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 08:46:34.861	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 08:46:34.861	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 08:46:34.861	info	exam0	{"questions": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 08:46:34.861	info	exam1	{"questions": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 08:46:34.861	info	exam1	{"not nil": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 08:46:34.861	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 08:46:34.861	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 08:46:34.861	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T08:46:34.692076+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"B","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1333,"ItemOrder":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T08:46:34.692076+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"A","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1335,"ItemOrder":2}]}
+2024-07-15 08:46:34.862	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":10,"UserScore":10,"PaperScore":20,"QuestionCorrect":1,"QuestionCount":2,"DoTime":9,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T08:46:34.692076+08:00","TaskExamID":0}}
+2024-07-15 09:03:43.879	info	exam	{"DB init": "ok"}
+2024-07-15 09:03:44.112	info	register table success
+2024-07-15 09:03:44.112	info	Message	{"routerPrefix": ""}
+2024-07-15 09:03:44.112	info	register swagger handler
+2024-07-15 09:03:44.112	info	server run success on 	{"address": ":8004"}
+2024-07-15 09:04:24.178	info	exam	{"": {"questionId":null,"doTime":9,"answerItems":[{"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 09:04:24.220	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 09:04:24.221	info	exam	{"2": 1}
+2024-07-15 09:04:24.221	info	exam	{"DB init": 1334}
+2024-07-15 09:04:24.269	info	exam	{"questionIds": [317, 318]}
+2024-07-15 09:04:24.311	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 09:04:24.311	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 09:04:24.311	info	exam0	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 09:04:24.312	info	exam1	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 09:04:24.312	info	exam1	{"not nil": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 09:04:24.313	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 09:04:24.313	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 09:04:24.313	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 09:04:24.313	info	exam0	{"questions": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 09:04:24.313	info	exam1	{"questions": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 09:04:24.313	info	exam1	{"not nil": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 09:04:24.313	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 09:04:24.313	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 09:04:24.313	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T09:04:24.178679+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"B","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1333,"ItemOrder":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T09:04:24.178679+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"A","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1335,"ItemOrder":2}]}
+2024-07-15 09:04:24.314	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":10,"UserScore":10,"PaperScore":20,"QuestionCorrect":1,"QuestionCount":2,"DoTime":9,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T09:04:24.178679+08:00","TaskExamID":0}}
+2024-07-15 10:54:25.835	info	exam	{"DB init": "ok"}
+2024-07-15 10:54:25.943	info	register table success
+2024-07-15 10:54:25.943	info	Message	{"routerPrefix": ""}
+2024-07-15 10:54:25.943	info	register swagger handler
+2024-07-15 10:54:25.944	info	server run success on 	{"address": ":8004"}
+2024-07-15 10:54:42.889	info	exam	{"": {"questionId":null,"doTime":9,"answerItems":[{"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 10:54:42.933	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 10:54:42.933	info	exam	{"2": 1}
+2024-07-15 10:54:42.933	info	exam	{"DB init": 1334}
+2024-07-15 10:54:42.980	info	exam	{"questionIds": [317, 318]}
+2024-07-15 10:54:43.022	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 10:54:43.022	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 10:54:43.022	info	exam0	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 10:54:43.023	info	exam1	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 10:54:43.023	info	exam1	{"not nil": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 10:54:43.023	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 10:54:43.023	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 10:54:43.023	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 10:54:43.023	info	exam0	{"questions": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 10:54:43.023	info	exam1	{"questions": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 10:54:43.023	info	exam1	{"not nil": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 10:54:43.023	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 10:54:43.023	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 10:54:43.023	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T10:54:42.889353+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"B","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1333,"ItemOrder":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T10:54:42.889353+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"A","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1335,"ItemOrder":2}]}
+2024-07-15 10:54:43.023	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":10,"UserScore":10,"PaperScore":20,"QuestionCorrect":1,"QuestionCount":2,"DoTime":9,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T10:54:42.889353+08:00","TaskExamID":0}}
+2024-07-15 11:40:11.639	info	exam	{"": {"questionId":null,"doTime":9,"answerItems":[{"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 11:40:11.683	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 11:40:11.683	info	exam	{"2": 1}
+2024-07-15 11:40:11.683	info	exam	{"DB init": 1334}
+2024-07-15 11:40:11.687	info	exam	{"questionIds": [317, 318]}
+2024-07-15 11:40:11.688	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 11:40:11.688	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 11:40:11.688	info	exam0	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:40:11.688	info	exam1	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:40:11.688	info	exam1	{"not nil": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:40:11.689	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:40:11.689	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:40:11.689	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 11:40:11.689	info	exam0	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:40:11.689	info	exam1	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:40:11.689	info	exam1	{"not nil": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:40:11.689	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:40:11.689	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:40:11.689	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:40:11.640867+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"B","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1333,"ItemOrder":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:40:11.640867+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"C","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1335,"ItemOrder":2}]}
+2024-07-15 11:40:11.690	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":20,"UserScore":20,"PaperScore":20,"QuestionCorrect":2,"QuestionCount":2,"DoTime":9,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T11:40:11.640867+08:00","TaskExamID":0}}
+2024-07-15 11:43:28.755	info	exam	{"DB init": "ok"}
+2024-07-15 11:43:28.837	info	register table success
+2024-07-15 11:43:28.837	info	Message	{"routerPrefix": ""}
+2024-07-15 11:43:28.838	info	register swagger handler
+2024-07-15 11:43:28.838	info	server run success on 	{"address": ":8004"}
+2024-07-15 11:43:32.112	info	exam	{"": {"questionId":null,"doTime":9,"answerItems":[{"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 11:43:32.154	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 11:43:32.155	info	exam	{"2": 1}
+2024-07-15 11:43:32.155	info	exam	{"DB init": 1334}
+2024-07-15 11:43:32.181	info	exam	{"questionIds": [317, 318]}
+2024-07-15 11:43:32.224	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 11:43:32.225	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 11:43:32.225	info	exam0	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:43:32.225	info	exam1	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:43:32.225	info	exam1	{"not nil": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:43:32.226	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:43:32.226	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:43:32.226	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 11:43:32.226	info	exam0	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:43:32.226	info	exam1	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:43:32.226	info	exam1	{"not nil": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:43:32.226	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:43:32.226	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:43:32.226	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:43:32.113083+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"B","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1333,"ItemOrder":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:43:32.113083+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"C","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1335,"ItemOrder":2}]}
+2024-07-15 11:43:32.227	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":20,"UserScore":20,"PaperScore":20,"QuestionCorrect":2,"QuestionCount":2,"DoTime":9,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T11:43:32.113083+08:00","TaskExamID":0}}
+2024-07-15 11:53:06.556	info	exam	{"DB init": "ok"}
+2024-07-15 11:53:06.636	info	register table success
+2024-07-15 11:53:06.636	info	Message	{"routerPrefix": ""}
+2024-07-15 11:53:06.636	info	register swagger handler
+2024-07-15 11:53:06.637	info	server run success on 	{"address": ":8004"}
+2024-07-15 11:53:09.335	info	exam	{"": {"questionId":null,"doTime":9,"answerItems":[{"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 11:53:09.336	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 11:53:09.336	info	exam	{"2": 1}
+2024-07-15 11:53:09.336	info	exam	{"DB init": 1334}
+2024-07-15 11:53:09.420	info	exam	{"questionIds": [317, 318]}
+2024-07-15 11:53:09.421	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 11:53:09.421	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 11:53:09.422	info	exam0	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:53:09.422	info	exam1	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:53:09.422	info	exam1	{"not nil": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:53:09.422	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:53:09.422	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:53:09.422	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 11:53:09.423	info	exam0	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:53:09.423	info	exam1	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:53:09.423	info	exam1	{"not nil": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:53:09.423	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:53:09.423	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:53:09.423	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:53:09.33545+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"B","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1333,"ItemOrder":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:53:09.33545+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"C","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1335,"ItemOrder":2}]}
+2024-07-15 11:53:09.424	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":20,"UserScore":20,"PaperScore":20,"QuestionCorrect":2,"QuestionCount":2,"DoTime":9,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T11:53:09.33545+08:00","TaskExamID":0}}
+2024-07-15 11:53:31.613	info	exam	{"DB init": "ok"}
+2024-07-15 11:53:31.663	info	register table success
+2024-07-15 11:53:31.663	info	Message	{"routerPrefix": ""}
+2024-07-15 11:53:31.664	info	register swagger handler
+2024-07-15 11:53:31.664	info	server run success on 	{"address": ":8004"}
+2024-07-15 11:53:34.445	info	exam	{"": {"questionId":null,"doTime":9,"answerItems":[{"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 11:53:34.446	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 11:53:34.446	info	exam	{"2": 1}
+2024-07-15 11:53:34.446	info	exam	{"DB init": 1334}
+2024-07-15 11:53:34.447	info	exam	{"questionIds": [317, 318]}
+2024-07-15 11:53:34.448	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 11:53:34.448	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 11:53:34.448	info	exam0	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:53:34.448	info	exam1	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:53:34.448	info	exam1	{"not nil": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:53:34.449	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:53:34.449	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:53:34.449	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 11:53:34.449	info	exam0	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:53:34.449	info	exam1	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:53:34.449	info	exam1	{"not nil": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:53:34.449	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:53:34.449	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:53:34.449	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:53:34.44576+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"B","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1333,"ItemOrder":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:53:34.44576+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"C","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1335,"ItemOrder":2}]}
+2024-07-15 11:53:34.449	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":20,"UserScore":20,"PaperScore":20,"QuestionCorrect":2,"QuestionCount":2,"DoTime":9,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T11:53:34.44576+08:00","TaskExamID":0}}
+2024-07-15 11:54:25.938	info	exam	{"DB init": "ok"}
+2024-07-15 11:54:26.002	info	register table success
+2024-07-15 11:54:26.002	info	Message	{"routerPrefix": ""}
+2024-07-15 11:54:26.003	info	register swagger handler
+2024-07-15 11:54:26.003	info	server run success on 	{"address": ":8004"}
+2024-07-15 11:54:28.327	info	exam	{"": {"questionId":null,"doTime":9,"answerItems":[{"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 11:54:28.370	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 11:54:28.370	info	exam	{"2": 1}
+2024-07-15 11:54:28.371	info	exam	{"DB init": 1334}
+2024-07-15 11:54:28.452	info	exam	{"questionIds": [317, 318]}
+2024-07-15 11:54:28.534	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 11:54:28.534	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 11:54:28.534	info	exam0	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:54:28.534	info	exam1	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:54:28.534	info	exam1	{"not nil": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:54:28.534	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:54:28.534	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:54:28.534	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 11:54:28.535	info	exam0	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:54:28.535	info	exam1	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:54:28.535	info	exam1	{"not nil": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:54:28.535	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:54:28.535	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:54:28.535	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:54:28.327303+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"B","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1333,"ItemOrder":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:54:28.327303+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"C","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1335,"ItemOrder":2}]}
+2024-07-15 11:54:28.535	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":20,"UserScore":20,"PaperScore":20,"QuestionCorrect":2,"QuestionCount":2,"DoTime":9,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T11:54:28.327303+08:00","TaskExamID":0}}
+2024-07-15 11:54:36.565	info	exam	{"": {"questionId":null,"doTime":2,"answerItems":[{"questionId":317,"content":"","contentArray":[],"completed":false,"itemOrder":1},{"questionId":318,"content":"","contentArray":[],"completed":false,"itemOrder":2}],"id":14}}
+2024-07-15 11:54:36.606	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 11:54:36.607	info	exam	{"2": 1}
+2024-07-15 11:54:36.607	info	exam	{"DB init": 1334}
+2024-07-15 11:54:36.608	info	exam	{"questionIds": [317, 318]}
+2024-07-15 11:54:36.609	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 11:54:36.609	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 11:54:36.610	info	exam0	{"questions": {"questionId":317,"content":"","contentArray":[],"completed":false,"itemOrder":1}}
+2024-07-15 11:54:36.611	info	exam1	{"questions": {"questionId":317,"content":"","contentArray":[],"completed":false,"itemOrder":1}}
+2024-07-15 11:54:36.611	info	exam1	{"not nil": {"questionId":317,"content":"","contentArray":[],"completed":false,"itemOrder":1}}
+2024-07-15 11:54:36.612	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:54:36.612	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:54:36.612	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 11:54:36.612	info	exam0	{"questions": {"questionId":318,"content":"","contentArray":[],"completed":false,"itemOrder":2}}
+2024-07-15 11:54:36.612	info	exam1	{"questions": {"questionId":318,"content":"","contentArray":[],"completed":false,"itemOrder":2}}
+2024-07-15 11:54:36.612	info	exam1	{"not nil": {"questionId":318,"content":"","contentArray":[],"completed":false,"itemOrder":2}}
+2024-07-15 11:54:36.612	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:54:36.613	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:54:36.613	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:54:36.565323+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1333,"ItemOrder":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:54:36.565323+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1335,"ItemOrder":2}]}
+2024-07-15 11:54:36.613	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":0,"UserScore":0,"PaperScore":20,"QuestionCorrect":0,"QuestionCount":2,"DoTime":2,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T11:54:36.565323+08:00","TaskExamID":0}}
+2024-07-15 11:54:59.730	info	exam	{"DB init": "ok"}
+2024-07-15 11:54:59.817	info	register table success
+2024-07-15 11:54:59.817	info	Message	{"routerPrefix": ""}
+2024-07-15 11:54:59.817	info	register swagger handler
+2024-07-15 11:54:59.817	info	server run success on 	{"address": ":8004"}
+2024-07-15 11:55:04.728	info	exam	{"": {"questionId":null,"doTime":2,"answerItems":[{"questionId":317,"content":"","contentArray":[],"completed":false,"itemOrder":1},{"questionId":318,"content":"","contentArray":[],"completed":false,"itemOrder":2}],"id":14}}
+2024-07-15 11:55:04.875	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 11:55:04.876	info	exam	{"2": 1}
+2024-07-15 11:55:04.876	info	exam	{"DB init": 1334}
+2024-07-15 11:55:04.919	info	exam	{"questionIds": [317, 318]}
+2024-07-15 11:55:05.043	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 11:55:05.043	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 11:55:05.046	info	exam0	{"questions": {"questionId":317,"content":"","contentArray":[],"completed":false,"itemOrder":1}}
+2024-07-15 11:55:05.046	info	exam1	{"questions": {"questionId":317,"content":"","contentArray":[],"completed":false,"itemOrder":1}}
+2024-07-15 11:55:05.047	info	exam1	{"not nil": {"questionId":317,"content":"","contentArray":[],"completed":false,"itemOrder":1}}
+2024-07-15 11:55:05.047	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:55:05.047	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:55:05.047	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 11:55:05.047	info	exam0	{"questions": {"questionId":318,"content":"","contentArray":[],"completed":false,"itemOrder":2}}
+2024-07-15 11:55:05.047	info	exam1	{"questions": {"questionId":318,"content":"","contentArray":[],"completed":false,"itemOrder":2}}
+2024-07-15 11:55:05.047	info	exam1	{"not nil": {"questionId":318,"content":"","contentArray":[],"completed":false,"itemOrder":2}}
+2024-07-15 11:55:05.048	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:55:05.048	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:55:05.048	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:55:04.728986+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1333,"ItemOrder":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:55:04.728986+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1335,"ItemOrder":2}]}
+2024-07-15 11:55:05.048	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":0,"UserScore":0,"PaperScore":20,"QuestionCorrect":0,"QuestionCount":2,"DoTime":2,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T11:55:04.728986+08:00","TaskExamID":0}}
+2024-07-15 11:55:45.421	info	exam	{"DB init": "ok"}
+2024-07-15 11:55:45.561	info	register table success
+2024-07-15 11:55:45.562	info	Message	{"routerPrefix": ""}
+2024-07-15 11:55:45.562	info	register swagger handler
+2024-07-15 11:55:45.563	info	server run success on 	{"address": ":8004"}
+2024-07-15 11:55:51.582	info	exam	{"": {"questionId":null,"doTime":2,"answerItems":[{"questionId":317,"content":"","contentArray":[],"completed":false,"itemOrder":1},{"questionId":318,"content":"","contentArray":[],"completed":false,"itemOrder":2}],"id":14}}
+2024-07-15 11:55:51.624	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 11:55:51.625	info	exam	{"2": 1}
+2024-07-15 11:55:51.625	info	exam	{"DB init": 1334}
+2024-07-15 11:55:51.708	info	exam	{"questionIds": [317, 318]}
+2024-07-15 11:55:51.747	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 11:55:51.748	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 11:55:51.748	info	exam0	{"questions": {"questionId":317,"content":"","contentArray":[],"completed":false,"itemOrder":1}}
+2024-07-15 11:55:51.748	info	exam1	{"questions": {"questionId":317,"content":"","contentArray":[],"completed":false,"itemOrder":1}}
+2024-07-15 11:55:51.748	info	exam1	{"not nil": {"questionId":317,"content":"","contentArray":[],"completed":false,"itemOrder":1}}
+2024-07-15 11:55:51.748	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:55:51.748	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:55:51.748	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 11:55:51.748	info	exam0	{"questions": {"questionId":318,"content":"","contentArray":[],"completed":false,"itemOrder":2}}
+2024-07-15 11:55:51.748	info	exam1	{"questions": {"questionId":318,"content":"","contentArray":[],"completed":false,"itemOrder":2}}
+2024-07-15 11:55:51.748	info	exam1	{"not nil": {"questionId":318,"content":"","contentArray":[],"completed":false,"itemOrder":2}}
+2024-07-15 11:55:51.748	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:55:51.748	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:55:51.749	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:55:51.582694+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1333,"ItemOrder":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:55:51.582694+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1335,"ItemOrder":2}]}
+2024-07-15 11:55:51.749	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":0,"UserScore":0,"PaperScore":20,"QuestionCorrect":0,"QuestionCount":2,"DoTime":2,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T11:55:51.582694+08:00","TaskExamID":0}}
+2024-07-15 11:56:17.631	info	exam	{"": {"questionId":null,"doTime":4,"answerItems":[{"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 11:56:17.674	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 11:56:17.675	info	exam	{"2": 1}
+2024-07-15 11:56:17.675	info	exam	{"DB init": 1334}
+2024-07-15 11:56:17.676	info	exam	{"questionIds": [317, 318]}
+2024-07-15 11:56:17.677	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 11:56:17.677	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 11:56:17.677	info	exam0	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:56:17.677	info	exam1	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:56:17.677	info	exam1	{"not nil": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:56:17.678	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:56:17.678	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:56:17.678	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 11:56:17.678	info	exam0	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:56:17.678	info	exam1	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:56:17.678	info	exam1	{"not nil": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:56:17.679	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:56:17.679	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:56:17.679	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:56:17.631841+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"B","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1333,"ItemOrder":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:56:17.631841+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"C","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1335,"ItemOrder":2}]}
+2024-07-15 11:56:17.679	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":20,"UserScore":20,"PaperScore":20,"QuestionCorrect":2,"QuestionCount":2,"DoTime":4,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T11:56:17.631841+08:00","TaskExamID":0}}
+2024-07-15 11:58:11.702	info	exam	{"DB init": "ok"}
+2024-07-15 11:58:11.790	info	register table success
+2024-07-15 11:58:11.790	info	Message	{"routerPrefix": ""}
+2024-07-15 11:58:11.792	info	register swagger handler
+2024-07-15 11:58:11.792	info	server run success on 	{"address": ":8004"}
+2024-07-15 11:58:24.231	info	exam	{"": {"questionId":null,"doTime":4,"answerItems":[{"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 11:58:24.232	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 11:58:24.232	info	exam	{"2": 1}
+2024-07-15 11:58:24.232	info	exam	{"DB init": 1334}
+2024-07-15 11:58:24.233	info	exam	{"questionIds": [317, 318]}
+2024-07-15 11:58:24.275	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 11:58:24.275	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 11:58:24.275	info	exam0	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:58:24.276	info	exam1	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:58:24.276	info	exam1	{"not nil": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 11:58:24.276	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:58:24.276	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:58:24.276	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 11:58:24.276	info	exam0	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:58:24.276	info	exam1	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:58:24.276	info	exam1	{"not nil": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 11:58:24.276	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:58:24.276	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 11:58:24.276	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:58:24.231761+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"B","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1333,"ItemOrder":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T11:58:24.231761+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"C","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1335,"ItemOrder":2}]}
+2024-07-15 11:58:24.277	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":20,"UserScore":20,"PaperScore":20,"QuestionCorrect":2,"QuestionCount":2,"DoTime":4,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T11:58:24.231761+08:00","TaskExamID":0}}
+2024-07-15 12:44:02.730	info	exam	{"": {"questionId":null,"doTime":4,"answerItems":[{"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"B","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 12:44:02.771	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 12:44:02.771	info	exam	{"2": 1}
+2024-07-15 12:44:02.772	info	exam	{"DB init": 1334}
+2024-07-15 12:44:02.772	info	exam	{"questionIds": [317, 318]}
+2024-07-15 12:44:02.774	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 12:44:02.774	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 12:44:02.774	info	exam0	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 12:44:02.774	info	exam1	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 12:44:02.774	info	exam1	{"not nil": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 12:44:02.774	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 12:44:02.774	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 12:44:02.774	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 12:44:02.775	info	exam0	{"questions": {"questionId":318,"content":"B","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 12:44:02.775	info	exam1	{"questions": {"questionId":318,"content":"B","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 12:44:02.775	info	exam1	{"not nil": {"questionId":318,"content":"B","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 12:44:02.775	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 12:44:02.775	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 12:44:02.775	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T12:44:02.731227+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"B","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1333,"ItemOrder":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T12:44:02.731227+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"B","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1335,"ItemOrder":2}]}
+2024-07-15 12:44:02.775	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":10,"UserScore":10,"PaperScore":20,"QuestionCorrect":1,"QuestionCount":2,"DoTime":4,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T12:44:02.731227+08:00","TaskExamID":0}}
+2024-07-15 13:08:28.103	info	exam	{"DB init": "ok"}
+2024-07-15 13:08:28.189	info	register table success
+2024-07-15 13:08:28.189	info	Message	{"routerPrefix": ""}
+2024-07-15 13:08:28.189	info	register swagger handler
+2024-07-15 13:08:28.190	info	server run success on 	{"address": ":8004"}
+2024-07-15 13:08:45.349	info	exam	{"": {"questionId":null,"doTime":5,"answerItems":[{"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 13:08:45.393	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 13:08:45.393	info	exam	{"2": 1}
+2024-07-15 13:08:45.393	info	exam	{"DB init": 1334}
+2024-07-15 13:08:45.435	info	exam	{"questionIds": [317, 318]}
+2024-07-15 13:08:45.478	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 13:08:45.478	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 13:08:45.480	info	exam0	{"questions": {"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 13:08:45.481	info	exam1	{"questions": {"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 13:08:45.481	info	exam1	{"not nil": {"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 13:08:45.481	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:08:45.482	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:08:45.482	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 13:08:45.482	info	exam0	{"questions": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 13:08:45.482	info	exam1	{"questions": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 13:08:45.482	info	exam1	{"not nil": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 13:08:45.482	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:08:45.482	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:08:45.482	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T13:08:45.349936+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"A","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1333,"ItemOrder":1,"ErrCount":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T13:08:45.349936+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"A","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1335,"ItemOrder":2,"ErrCount":1}]}
+2024-07-15 13:08:45.482	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":0,"UserScore":0,"PaperScore":20,"QuestionCorrect":0,"QuestionCount":2,"DoTime":5,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T13:08:45.349936+08:00","TaskExamID":0}}
+2024-07-15 13:20:42.867	info	exam	{"": {"questionId":null,"doTime":4,"answerItems":[{"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 13:20:42.911	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 13:20:42.911	info	exam	{"2": 1}
+2024-07-15 13:20:42.914	info	exam	{"DB init": 1334}
+2024-07-15 13:20:42.915	info	exam	{"questionIds": [317, 318]}
+2024-07-15 13:20:42.998	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 13:20:42.999	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 13:20:42.999	info	exam0	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 13:20:42.999	info	exam1	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 13:20:42.999	info	exam1	{"not nil": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 13:20:43.000	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:20:43.000	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:20:43.000	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 13:20:43.001	info	exam0	{"questions": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 13:20:43.001	info	exam1	{"questions": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 13:20:43.001	info	exam1	{"not nil": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 13:20:43.002	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:20:43.002	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:20:43.002	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T13:20:42.86969+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"B","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1333,"ItemOrder":1,"ErrCount":0},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T13:20:42.86969+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"A","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1335,"ItemOrder":2,"ErrCount":1}]}
+2024-07-15 13:20:43.003	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":10,"UserScore":10,"PaperScore":20,"QuestionCorrect":1,"QuestionCount":2,"DoTime":4,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T13:20:42.86969+08:00","TaskExamID":0}}
+2024-07-15 13:29:37.946	info	exam	{"": {"questionId":null,"doTime":8,"answerItems":[{"questionId":317,"content":"C","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 13:29:37.948	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 13:29:37.950	info	exam	{"2": 1}
+2024-07-15 13:29:37.950	info	exam	{"DB init": 1334}
+2024-07-15 13:29:37.985	info	exam	{"questionIds": [317, 318]}
+2024-07-15 13:29:37.986	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 13:29:37.986	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 13:29:37.986	info	exam0	{"questions": {"questionId":317,"content":"C","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 13:29:37.986	info	exam1	{"questions": {"questionId":317,"content":"C","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 13:29:37.986	info	exam1	{"not nil": {"questionId":317,"content":"C","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 13:29:37.986	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:29:37.986	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:29:37.986	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 13:29:37.987	info	exam0	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 13:29:37.987	info	exam1	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 13:29:37.987	info	exam1	{"not nil": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 13:29:37.987	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:29:37.987	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:29:37.987	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T13:29:37.947988+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"C","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1333,"ItemOrder":1,"ErrCount":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T13:29:37.947988+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"C","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1335,"ItemOrder":2,"ErrCount":0}]}
+2024-07-15 13:29:37.987	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":10,"UserScore":10,"PaperScore":20,"QuestionCorrect":1,"QuestionCount":2,"DoTime":8,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T13:29:37.947988+08:00","TaskExamID":0}}
+2024-07-15 13:30:16.642	info	exam	{"": {"questionId":null,"doTime":7,"answerItems":[{"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 13:30:16.643	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 13:30:16.643	info	exam	{"2": 1}
+2024-07-15 13:30:16.644	info	exam	{"DB init": 1334}
+2024-07-15 13:30:16.686	info	exam	{"questionIds": [317, 318]}
+2024-07-15 13:30:16.686	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 13:30:16.687	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 13:30:16.687	info	exam0	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 13:30:16.687	info	exam1	{"questions": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 13:30:16.687	info	exam1	{"not nil": {"questionId":317,"content":"B","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 13:30:16.687	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:30:16.688	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:30:16.688	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 13:30:16.688	info	exam0	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 13:30:16.688	info	exam1	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 13:30:16.688	info	exam1	{"not nil": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 13:30:16.688	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:30:16.688	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:30:16.689	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T13:30:16.643162+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"B","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1333,"ItemOrder":1,"ErrCount":0},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T13:30:16.643162+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"C","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1335,"ItemOrder":2,"ErrCount":0}]}
+2024-07-15 13:30:16.690	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":20,"UserScore":20,"PaperScore":20,"QuestionCorrect":2,"QuestionCount":2,"DoTime":7,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T13:30:16.643162+08:00","TaskExamID":0}}
+2024-07-15 13:30:36.279	info	exam	{"": {"questionId":null,"doTime":8,"answerItems":[{"questionId":317,"content":"D","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"B","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 13:30:36.280	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 13:30:36.280	info	exam	{"2": 1}
+2024-07-15 13:30:36.280	info	exam	{"DB init": 1334}
+2024-07-15 13:30:36.280	info	exam	{"questionIds": [317, 318]}
+2024-07-15 13:30:36.282	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 13:30:36.282	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 13:30:36.282	info	exam0	{"questions": {"questionId":317,"content":"D","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 13:30:36.282	info	exam1	{"questions": {"questionId":317,"content":"D","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 13:30:36.282	info	exam1	{"not nil": {"questionId":317,"content":"D","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 13:30:36.282	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:30:36.282	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:30:36.282	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 13:30:36.282	info	exam0	{"questions": {"questionId":318,"content":"B","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 13:30:36.283	info	exam1	{"questions": {"questionId":318,"content":"B","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 13:30:36.283	info	exam1	{"not nil": {"questionId":318,"content":"B","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 13:30:36.283	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:30:36.283	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:30:36.283	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T13:30:36.279442+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"D","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1333,"ItemOrder":1,"ErrCount":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T13:30:36.279442+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"B","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1335,"ItemOrder":2,"ErrCount":1}]}
+2024-07-15 13:30:36.283	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":0,"UserScore":0,"PaperScore":20,"QuestionCorrect":0,"QuestionCount":2,"DoTime":8,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T13:30:36.279442+08:00","TaskExamID":0}}
+2024-07-15 13:32:27.877	info	exam	{"": {"questionId":null,"doTime":5,"answerItems":[{"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 13:32:27.878	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 13:32:27.878	info	exam	{"2": 1}
+2024-07-15 13:32:27.878	info	exam	{"DB init": 1334}
+2024-07-15 13:32:27.919	info	exam	{"questionIds": [317, 318]}
+2024-07-15 13:32:27.920	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}]}
+2024-07-15 13:32:27.922	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA=="}}
+2024-07-15 13:32:27.922	info	exam0	{"questions": {"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 13:32:27.922	info	exam1	{"questions": {"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 13:32:27.923	info	exam1	{"not nil": {"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 13:32:27.923	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:32:27.923	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:32:27.923	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA=="}}
+2024-07-15 13:32:27.923	info	exam0	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 13:32:27.923	info	exam1	{"questions": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 13:32:27.923	info	exam1	{"not nil": {"questionId":318,"content":"C","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 13:32:27.923	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:32:27.924	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 13:32:27.924	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T13:32:27.877445+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"A","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1333,"ItemOrder":1,"ErrCount":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T13:32:27.877445+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"C","CustomerScore":10,"ExamPaperAnswerID":0,"DoRight":true,"QuestionTextContentID":1335,"ItemOrder":2,"ErrCount":0}]}
+2024-07-15 13:32:27.924	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":10,"UserScore":10,"PaperScore":20,"QuestionCorrect":1,"QuestionCount":2,"DoTime":5,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T13:32:27.877445+08:00","TaskExamID":0}}
+2024-07-15 14:27:28.994	info	exam	{"DB init": "ok"}
+2024-07-15 14:27:29.067	info	register table success
+2024-07-15 14:27:29.067	info	Message	{"routerPrefix": ""}
+2024-07-15 14:27:29.067	info	register swagger handler
+2024-07-15 14:27:29.067	info	server run success on 	{"address": ":8004"}
+2024-07-15 14:28:27.532	info	exam	{"": {"questionId":null,"doTime":14,"answerItems":[{"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 14:28:27.534	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 14:28:27.534	info	exam	{"2": 1}
+2024-07-15 14:28:27.534	info	exam	{"DB init": 1334}
+2024-07-15 14:28:27.535	info	exam	{"questionIds": [317, 318]}
+2024-07-15 14:28:27.537	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA==","ErrCount":0},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA==","ErrCount":0}]}
+2024-07-15 14:28:27.538	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA==","ErrCount":0}}
+2024-07-15 14:28:27.538	info	exam0	{"questions": {"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 14:28:27.538	info	exam1	{"questions": {"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 14:28:27.538	info	exam1	{"not nil": {"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 14:28:27.538	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 14:28:27.538	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 14:28:27.538	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA==","ErrCount":0}}
+2024-07-15 14:28:27.538	info	exam0	{"questions": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 14:28:27.539	info	exam1	{"questions": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 14:28:27.539	info	exam1	{"not nil": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 14:28:27.539	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 14:28:27.539	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 14:28:27.539	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T14:28:27.533275+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"A","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1333,"ItemOrder":1,"ErrCount":1},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T14:28:27.533275+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"A","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1335,"ItemOrder":2,"ErrCount":1}]}
+2024-07-15 14:28:27.539	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":0,"UserScore":0,"PaperScore":20,"QuestionCorrect":0,"QuestionCount":2,"DoTime":14,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T14:28:27.533275+08:00","TaskExamID":0}}
+2024-07-15 14:29:38.851	info	exam	{"": {"questionId":null,"doTime":4,"answerItems":[{"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":1},{"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}],"id":14}}
+2024-07-15 14:29:38.894	info	exam	{"DB init": 1, "DB init": 14}
+2024-07-15 14:29:38.894	info	exam	{"2": 1}
+2024-07-15 14:29:38.898	info	exam	{"DB init": 1334}
+2024-07-15 14:29:38.899	info	exam	{"questionIds": [317, 318]}
+2024-07-15 14:29:38.900	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA==","ErrCount":1},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA==","ErrCount":1}]}
+2024-07-15 14:29:38.905	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA==","ErrCount":1}}
+2024-07-15 14:29:38.906	info	exam0	{"questions": {"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 14:29:38.906	info	exam1	{"questions": {"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 14:29:38.906	info	exam1	{"not nil": {"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 14:29:38.906	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 14:29:38.906	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 14:29:38.906	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA==","ErrCount":1}}
+2024-07-15 14:29:38.906	info	exam0	{"questions": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 14:29:38.906	info	exam1	{"questions": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 14:29:38.906	info	exam1	{"not nil": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 14:29:38.906	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 14:29:38.906	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 14:29:38.907	info	exam	{"questions": [{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T14:29:38.852223+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"A","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1333,"ItemOrder":1,"ErrCount":2},{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T14:29:38.852223+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":14,"QuestionType":1,"Answer":"A","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1335,"ItemOrder":2,"ErrCount":2}]}
+2024-07-15 14:29:38.907	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":14,"PaperName":"wqw","PaperType":1,"SubjectID":1,"SystemScore":0,"UserScore":0,"PaperScore":20,"QuestionCorrect":0,"QuestionCount":2,"DoTime":4,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T14:29:38.852223+08:00","TaskExamID":0}}
+2024-07-15 14:43:37.539	info	exam	{"": {"questionId":null,"doTime":4,"answerItems":[{"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":1},{"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":2}],"id":15}}
+2024-07-15 14:43:37.568	info	exam	{"DB init": 1, "DB init": 15}
+2024-07-15 14:43:37.568	info	exam	{"2": 1}
+2024-07-15 14:43:37.568	info	exam	{"DB init": 1336}
+2024-07-15 14:43:37.595	info	exam	{"questionIds": [318, 317]}
+2024-07-15 14:43:37.596	info	exam	{"questions": [{"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA==","ErrCount":2},{"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA==","ErrCount":2}]}
+2024-07-15 14:43:37.596	info	examPaperTitleItemObjects item	{"questions": {"ID":318,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"C","InfoTextContentID":1335,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:39:17+08:00","Deleted":"AA==","ErrCount":2}}
+2024-07-15 14:43:37.597	info	exam0	{"questions": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 14:43:37.597	info	exam1	{"questions": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 14:43:37.597	info	exam1	{"not nil": {"questionId":318,"content":"A","contentArray":[],"completed":true,"itemOrder":1}}
+2024-07-15 14:43:37.597	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 14:43:37.597	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 14:43:37.597	info	examPaperTitleItemObjects item	{"questions": {"ID":317,"QuestionType":1,"SubjectID":1,"Score":10,"GradeLevel":"1","Difficult":"5","Correct":"B","InfoTextContentID":1333,"CreateUser":"2","Status":"1","CreateTime":"2024-07-12T15:25:50+08:00","Deleted":"AA==","ErrCount":2}}
+2024-07-15 14:43:37.598	info	exam0	{"questions": {"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 14:43:37.598	info	exam1	{"questions": {"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 14:43:37.598	info	exam1	{"not nil": {"questionId":317,"content":"A","contentArray":[],"completed":true,"itemOrder":2}}
+2024-07-15 14:43:37.598	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 14:43:37.598	info	exam2	{"setSpecialFromVM": 1}
+2024-07-15 14:43:37.598	info	exam	{"questions": [{"QuestionID":318,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T14:43:37.541387+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":15,"QuestionType":1,"Answer":"A","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1335,"ItemOrder":1,"ErrCount":3},{"QuestionID":317,"QuestionScore":10,"SubjectID":1,"CreateTime":"2024-07-15T14:43:37.541387+08:00","CreateUser":2,"TextContentID":null,"ExamPaperID":15,"QuestionType":1,"Answer":"A","CustomerScore":0,"ExamPaperAnswerID":0,"DoRight":false,"QuestionTextContentID":1333,"ItemOrder":2,"ErrCount":3}]}
+2024-07-15 14:43:37.600	info	exam3	{"ExamPaperAnswerFromVM": {"ExamPaperID":15,"PaperName":"qqqq","PaperType":1,"SubjectID":1,"SystemScore":0,"UserScore":0,"PaperScore":20,"QuestionCorrect":0,"QuestionCount":2,"DoTime":4,"Status":2,"CreateUser":2,"CreateTime":"2024-07-15T14:43:37.541387+08:00","TaskExamID":0}}

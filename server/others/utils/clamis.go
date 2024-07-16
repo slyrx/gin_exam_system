@@ -4,6 +4,7 @@ import (
 	"net"
 
 	"github.com/gin-gonic/gin"
+	systemMod "github.com/slyrx/gin_exam_system/server/model/system"
 	systemReq "github.com/slyrx/gin_exam_system/server/model/system/request"
 	"github.com/slyrx/gin_exam_system/server/others/global"
 )
@@ -52,4 +53,22 @@ func GetClaims(c *gin.Context) (*systemReq.CustomClaims, error) {
 		global.GES_LOG.Error("从Gin的Context中获取从jwt解析信息失败, 请检查请求头是否存在x-token且claims是否为规定结构")
 	}
 	return claims, err
+}
+
+// GetUserInfo 从Gin的Context中获取从jwt解析出来的用户角色id
+func GetUserInfo(c *gin.Context) *systemReq.CustomClaims {
+	if claims, exists := c.Get("claims"); !exists {
+		if cl, err := GetClaims(c); err != nil {
+			return nil
+		} else {
+			return cl
+		}
+	} else {
+		waitUse := claims.(*systemReq.CustomClaims)
+		return waitUse
+	}
+}
+
+func GetCurrentUser(c *gin.Context) *systemMod.SysExamUser {
+	return nil
 }
