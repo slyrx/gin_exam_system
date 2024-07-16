@@ -2,11 +2,13 @@ package utils
 
 import (
 	"net"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
 	systemMod "github.com/slyrx/gin_exam_system/server/model/system"
 	systemReq "github.com/slyrx/gin_exam_system/server/model/system/request"
 	"github.com/slyrx/gin_exam_system/server/others/global"
+	"go.uber.org/zap"
 )
 
 func SetToken(c *gin.Context, token string, maxAge int) {
@@ -70,5 +72,27 @@ func GetUserInfo(c *gin.Context) *systemReq.CustomClaims {
 }
 
 func GetCurrentUser(c *gin.Context) *systemMod.SysExamUser {
-	return nil
+
+	// 获取名为 "example_cookie" 的 cookie
+	cookie, err := c.Cookie("studentUserName")
+	global.GES_LOG.Info("cookie1", zap.Any("cookie", err))
+	if err != nil {
+		if err == http.ErrNoCookie {
+			// 如果 cookie 不存在，返回相应的响应
+			c.JSON(http.StatusNotFound, gin.H{
+				"message": "Cookie not found",
+			})
+			return nil
+		}
+		// 其他错误情况
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"message": "Error occurred",
+		})
+		return nil
+	}
+	var user systemMod.SysExamUser
+	user.UserName = cookie
+	global.GES_LOG.Info("cookie2", zap.Any("cookie", cookie))
+	global.GES_LOG.Info("cookie2", zap.Any("cookie", user))
+	return &user
 }

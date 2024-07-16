@@ -28,9 +28,31 @@ func (SysUser) TableName() string {
 	return "sys_users"
 }
 
+// TUser represents a user in the t_user table
 type SysExamUser struct {
-	ID       int
-	UserName string
+	ID             int       `gorm:"column:id;primary_key;auto_increment"`
+	UserUUID       string    `gorm:"column:user_uuid;size:36"`
+	UserName       string    `gorm:"column:user_name;size:255"`
+	Password       string    `gorm:"column:password;size:255"`
+	RealName       string    `gorm:"column:real_name;size:255"`
+	Age            int       `gorm:"column:age"`
+	Sex            int       `gorm:"column:sex"`
+	BirthDay       time.Time `gorm:"column:birth_day"`
+	UserLevel      int       `gorm:"column:user_level"`
+	Phone          string    `gorm:"column:phone;size:255"`
+	Role           int       `gorm:"column:role"`
+	Status         int       `gorm:"column:status"`
+	ImagePath      string    `gorm:"column:image_path;size:255"`
+	CreateTime     time.Time `gorm:"column:create_time"`
+	ModifyTime     time.Time `gorm:"column:modify_time"`
+	LastActiveTime time.Time `gorm:"column:last_active_time"`
+	Deleted        []byte    `gorm:"column:deleted"`
+	WxOpenID       string    `gorm:"column:wx_open_id;size:255"`
+}
+
+// TableName specifies the table name for TUser struct
+func (SysExamUser) TableName() string {
+	return "t_user"
 }
 
 // ExamPaperSubmitVM 定义了提交试卷的结构体
@@ -147,19 +169,21 @@ func (ExamPaperQuestionCustomerAnswer) TableName() string {
 
 // Question 结构体
 type Question struct {
-	ID                int       `gorm:"column:id"`
-	QuestionType      int       `gorm:"column:question_type"`
-	SubjectID         int       `gorm:"column:subject_id"`
-	Score             int       `gorm:"column:score"`
-	GradeLevel        string    `gorm:"column:grade_level"`
-	Difficult         string    `gorm:"column:difficult"`
-	Correct           string    `gorm:"column:correct"`
-	InfoTextContentID int       `gorm:"column:info_text_content_id"`
-	CreateUser        string    `gorm:"column:create_user"`
-	Status            string    `gorm:"column:status"`
-	CreateTime        time.Time `gorm:"column:create_time"`
-	Deleted           []byte    `gorm:"column:deleted"`
-	ErrCount          int       `gorm:"column:err_count"`
+	ID                 int                 `gorm:"column:id"`
+	QuestionType       int                 `gorm:"column:question_type"`
+	SubjectID          int                 `gorm:"column:subject_id"`
+	Score              int                 `gorm:"column:score"`
+	GradeLevel         string              `gorm:"column:grade_level"`
+	Difficult          string              `gorm:"column:difficult"`
+	Correct            string              `gorm:"column:correct"`
+	InfoTextContentID  int                 `gorm:"column:info_text_content_id"`
+	CreateUser         string              `gorm:"column:create_user"`
+	Status             string              `gorm:"column:status"`
+	CreateTime         time.Time           `gorm:"column:create_time"`
+	Deleted            []byte              `gorm:"column:deleted"`
+	UserQuestionErrors []UserQuestionError `gorm:"foreignKey:QuestionID"`
+	ErrCount           int                 `gorm:"-"`
+	ErrCountTotal      int                 `gorm:"column:err_count_total"`
 }
 
 func (Question) TableName() string {
@@ -184,4 +208,15 @@ type QuestionObject struct {
 	Analyze             string        `json:"analyze"`
 	QuestionItemObjects []interface{} `json:"questionItemObjects"`
 	Correct             string        `json:"correct"`
+}
+
+// 定义表的结构体
+type UserQuestionError struct {
+	UserID     uint `gorm:"column:user_id"`
+	QuestionID uint `gorm:"column:question_id"`
+	ErrCount   uint `gorm:"column:err_count"`
+}
+
+func (UserQuestionError) TableName() string {
+	return "t_user_question_errors"
 }

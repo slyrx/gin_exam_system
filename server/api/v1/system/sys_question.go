@@ -41,3 +41,12 @@ func (e *QuestionApi) GetPageInfo(c *gin.Context) {
 	// 返回结果
 	response.OkWithDetailedExam(pageResult, c)
 }
+
+func (e *QuestionApi) CreateUserQuestionTable(c *gin.Context) {
+	err := questionService.CreateUserQuestionTable()
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	response.OkWithMessage("创建用户做题表成功", c)
+}

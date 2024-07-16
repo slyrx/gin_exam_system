@@ -2,6 +2,7 @@ package system
 
 import (
 	"encoding/json"
+	"errors"
 	"time"
 
 	systemMod "github.com/slyrx/gin_exam_system/server/model/system"
@@ -61,7 +62,7 @@ func (examService *ExamService) CalculateExamPaperAnswer(user *systemMod.SysExam
 	}
 
 	global.GES_LOG.Info("exam", zap.Any("questionIds", questionIds))
-	questions, err := ExamServiceApp.selectQuestionsByIds(questionIds)
+	questions, err := ExamServiceApp.selectQuestionsByIds(user.ID, questionIds)
 	if err != nil {
 		return nil, err
 	}
@@ -103,7 +104,12 @@ func (examService *ExamService) CalculateExamPaperAnswer(user *systemMod.SysExam
 	}
 
 	// 更新错题数
-	err = ExamServiceApp.createQuestion(questionIds)
+	err = ExamServiceApp.createQuestion(user.ID, questionIds)
+	if err != nil {
+		return nil, err
+	}
+
+	err = ExamServiceApp.updateOrCreateUserQuestionErrors(int(user.ID), questionIds)
 	if err != nil {
 		return nil, err
 	}
@@ -115,11 +121,65 @@ func (examService *ExamService) CalculateExamPaperAnswer(user *systemMod.SysExam
 	return examPaperAnswerInfo, err
 }
 
+func (examService *ExamService) updateUserQuestionErrors(questionIds []int) (err error) {
+	err = global.GES_DB.Transaction(func(tx *gorm.DB) error {
+		result := tx.Model(&systemMod.UserQuestionError{}).
+			Where("user_id IN ?", questionIds).
+			Updates(map[string]interface{}{"err_count": gorm.Expr("err_count + 1")})
+
+		if result.Error != nil {
+			return result.Error
+		}
+
+		if result.RowsAffected != 2 {
+			// return fmt.Errorf("预期更新 2 条记录，实际更新 %d 条", result.RowsAffected)
+			return nil
+		}
+
+		return nil
+	})
+	return
+}
+
+func (examService *ExamService) updateOrCreateUserQuestionErrors(userId int, questionIds []int) (err error) {
+	err = global.GES_DB.Debug().Transaction(func(tx *gorm.DB) error {
+		for _, questionId := range questionIds {
+			// 尝试查找记录
+			var userQuestionError systemMod.UserQuestionError
+			result := tx.Where("user_id = ? AND question_id = ?", userId, questionId).First(&userQuestionError)
+			if result.Error != nil && !errors.Is(result.Error, gorm.ErrRecordNotFound) {
+				// 查询出错
+				return result.Error
+			}
+
+			if result.RowsAffected > 0 {
+				// 记录存在，更新 err_count
+				// userQuestionError.ErrCount++
+				if err := tx.Where("user_id = ? AND question_id = ?", userId, questionId).Save(&userQuestionError).Error; err != nil {
+					return err
+				}
+			} else {
+				// 记录不存在，创建新记录
+				newUserQuestionError := systemMod.UserQuestionError{
+					UserID:     uint(userId),
+					QuestionID: uint(questionId),
+					ErrCount:   1,
+				}
+				if err := tx.Create(&newUserQuestionError).Error; err != nil {
+					return err
+				}
+			}
+		}
+		return nil
+	})
+	return
+}
+
 func (examService *ExamService) CreateUserEventLog(userEventLog systemMod.UserEventLog) (err error) {
 	return global.GES_DB.Debug().Create(&userEventLog).Error
 }
 
-func (apiService *ExamService) createQuestion(questionIds []int) (err error) {
+func (examService *ExamService) createQuestion_old(questionIds []int) (err error) {
 	err = global.GES_DB.Transaction(func(tx *gorm.DB) error {
 		result := tx.Model(&systemMod.Question{}).
 			Where("id IN ?", questionIds).
@@ -139,11 +199,50 @@ func (apiService *ExamService) createQuestion(questionIds []int) (err error) {
 	return
 }
 
-func (apiService *ExamService) createExamPaperQuestionCustomerAnswer(examPaperQuestionCustomerAnswer []systemMod.ExamPaperQuestionCustomerAnswer) (err error) {
+func (examService *ExamService) createQuestion(userId int, questionIds []int) (err error) {
+	err = global.GES_DB.Debug().Transaction(func(tx *gorm.DB) error {
+		for _, questionId := range questionIds {
+			// 尝试找到现有的错误记录
+			var userQuestionError systemMod.UserQuestionError
+			result := tx.Model(&systemMod.UserQuestionError{}).
+				Where("user_id = ? AND question_id = ?", userId, questionId).
+				First(&userQuestionError)
+
+			if result.Error != nil && !errors.Is(result.Error, gorm.ErrRecordNotFound) {
+				return result.Error
+			}
+
+			global.GES_LOG.Info("exam", zap.Any("createQuestion", userQuestionError))
+
+			if result.RowsAffected == 0 {
+				// 如果没有找到记录，则创建新的错误记录
+				userQuestionError = systemMod.UserQuestionError{
+					UserID:     uint(userId),
+					QuestionID: uint(questionId),
+					ErrCount:   1,
+				}
+				if err := tx.Create(&userQuestionError).Error; err != nil {
+					return err
+				}
+			} else {
+				// 如果找到记录，则更新错误计数
+				if err := tx.Model(&userQuestionError).
+					Where("user_id = ? AND question_id = ?", userId, questionId).
+					Update("err_count", gorm.Expr("err_count + ?", 1)).Error; err != nil {
+					return err
+				}
+			}
+		}
+		return nil
+	})
+	return
+}
+
+func (examService *ExamService) createExamPaperQuestionCustomerAnswer(examPaperQuestionCustomerAnswer []systemMod.ExamPaperQuestionCustomerAnswer) (err error) {
 	return global.GES_DB.Debug().Create(&examPaperQuestionCustomerAnswer).Error
 }
 
-func (apiService *ExamService) createExamPaperAnswerFromVM(examPaperAnswer systemMod.ExamPaperAnswer) (err error) {
+func (examService *ExamService) createExamPaperAnswerFromVM(examPaperAnswer systemMod.ExamPaperAnswer) (err error) {
 	return global.GES_DB.Debug().Create(&examPaperAnswer).Error
 }
 
@@ -164,13 +263,38 @@ func (examService *ExamService) selectTextContentByID(id int) (s string, err err
 	return
 }
 
-func (examService *ExamService) selectQuestionsByIds(ids []int) (question []systemMod.Question, err error) {
+func (examService *ExamService) selectQuestionsByIds_old(ids []int) (question []systemMod.Question, err error) {
 	err = global.GES_DB.Debug().Where("id in (?)", ids).Find(&question).Error
 	if err != nil {
 		return
 	}
 	// 模拟数据库查询
 	return
+}
+
+func (examService *ExamService) selectQuestionsByIds(userId int, ids []int) ([]systemMod.Question, error) {
+	var questions []systemMod.Question
+
+	// 查询问题，并预加载 UserQuestionErrors
+	err := global.GES_DB.Debug().
+		Preload("UserQuestionErrors", func(db *gorm.DB) *gorm.DB {
+			return db.Where("user_id = ?", userId)
+		}).
+		Where("id IN (?)", ids).
+		Find(&questions).Error
+	if err != nil {
+		return nil, err
+	}
+
+	// 将 UserQuestionErrors 中的 err_count 赋值给 Question 的 ErrCount
+	for i := range questions {
+		questions[i].ErrCount = 0
+		for _, userError := range questions[i].UserQuestionErrors {
+			questions[i].ErrCount += int(userError.ErrCount)
+		}
+	}
+
+	return questions, nil
 }
 
 func (examService *ExamService) ExamPaperQuestionCustomerAnswerFromVM(question systemMod.Question, customerQuestionAnswer *systemMod.ExamPaperSubmitItemVM, examPaper systemMod.ExamPaper, itemOrder int, user *systemMod.SysExamUser, now time.Time) systemMod.ExamPaperQuestionCustomerAnswer {
@@ -277,4 +401,16 @@ func (examService *ExamService) ExamPaperAnswerFromVM(examPaperSubmitVM systemMo
 func (examService *ExamService) QuestionTypeEnumNeedSaveTextContent(questionType int) bool {
 	// Implement logic based on your enum
 	return false
+}
+
+func (examService *ExamService) GetUserInfo(userName string) *systemMod.SysExamUser {
+	// Implement logic based on your enum
+	var user systemMod.SysExamUser
+	// Query the database for a user with the specified username
+	err := global.GES_DB.Debug().Where("user_name = ?", userName).First(&user).Error
+	if err != nil {
+		return nil
+	}
+	global.GES_LOG.Info("exam3", zap.Any("GetUserInfo", user))
+	return &user
 }

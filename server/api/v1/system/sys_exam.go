@@ -21,10 +21,10 @@ func (e *ExamApi) AnswerSubmit(c *gin.Context) {
 		return
 	}
 
-	global.GES_LOG.Info("exam", zap.Any("", examPaperSubmitVM))
-
 	// 获取当前用户
 	user := utils.GetCurrentUser(c)
+	user.ID = examService.GetUserInfo(user.UserName).ID
+	global.GES_LOG.Info("exam", zap.Any("user", user))
 	// 计算试卷答案信息
 	examPaperAnswerInfo, err := examService.CalculateExamPaperAnswer(user, examPaperSubmitVM)
 	if err != nil {

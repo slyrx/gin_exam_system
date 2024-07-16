@@ -12,5 +12,6 @@ func (s *QuestionRouter) InitQuestionRouter(Router *gin.RouterGroup) {
 	questionApi := v1.ApiGroupApp.SystemApiGroup.QuestionApi
 	{
 		questionRouter.POST("question/page", questionApi.GetPageInfo)
+		questionRouter.GET("createUserQuestionTable", questionApi.CreateUserQuestionTable)
 	}
 }

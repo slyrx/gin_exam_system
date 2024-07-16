@@ -9,6 +9,7 @@ import (
 	"github.com/slyrx/gin_exam_system/server/others/global"
 	"github.com/slyrx/gin_exam_system/server/others/utils"
 	"go.uber.org/zap"
+	"gorm.io/gorm"
 )
 
 type QuestionService struct{}
@@ -55,7 +56,7 @@ func (questionService *QuestionService) GetQuestionsBySubject(subjectID int, lim
 	} else {
 		err := global.GES_DB.Debug().
 			Where("deleted = ? AND subject_id = ?", false, subjectID).
-			Order("err_count desc").
+			Order("err_count_total desc").
 			Limit(limit).
 			Offset(offset).
 			Find(&questions).
@@ -66,6 +67,19 @@ func (questionService *QuestionService) GetQuestionsBySubject(subjectID int, lim
 	}
 
 	return questions, nil
+}
+
+// 查询和排序
+func (questionService *QuestionService) queryAndSort(subjectID int) ([]systemMod.Question, error) {
+	var questions []systemMod.Question
+	// 查询和排序
+	err := global.GES_DB.Debug().
+		Preload("UserQuestionErrors", func(db *gorm.DB) *gorm.DB {
+			return db.Order("err_count DESC")
+		}).
+		Where("subject_id = ?", subjectID).
+		Find(&questions).Error
+	return questions, err
 }
 
 func (questionService *QuestionService) MapToPageQuestionResult(questions []systemMod.Question, respQuestions []response.Question, total int, pageNum int, pageSize int) response.PageQuestionResult {
@@ -194,5 +208,13 @@ func (questionService *QuestionService) selectTextContentByID(id int) (s string,
 	err = global.GES_DB.Debug().Where("id = ?", id).First(examPaperTextContent).Error
 	s = utils.Clear(examPaperTextContent.Content)
 	global.GES_LOG.Info("selectTextContentByID", zap.Any("s", s))
+	return
+}
+
+func (questionService *QuestionService) CreateUserQuestionTable() (err error) {
+	err = global.GES_DB.Debug().AutoMigrate(&systemMod.UserQuestionError{})
+	if err != nil {
+		global.GES_LOG.Info("failed to migrate database: ", zap.Any("failed to migrate database: ", err))
+	}
 	return
 }
