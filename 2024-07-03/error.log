@@ -1,8 +1,0 @@
-2024-07-03 09:49:26.407	error	accept tcp [::]:56499: use of closed network connection
-2024-07-03 14:14:34.297	error	accept tcp [::]:50773: use of closed network connection
-2024-07-03 14:16:15.055	error	accept tcp [::]:50822: use of closed network connection
-2024-07-03 15:23:49.634	error	accept tcp [::]:53602: use of closed network connection
-2024-07-03 17:29:01.851	error	accept tcp [::]:58828: use of closed network connection
-2024-07-03 17:29:26.459	error	accept tcp [::]:58845: use of closed network connection
-2024-07-03 20:36:16.027	error	accept tcp [::]:50179: use of closed network connection
-2024-07-03 21:33:46.679	error	accept tcp [::]:52519: use of closed network connection
