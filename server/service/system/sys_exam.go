@@ -66,6 +66,7 @@ func (examService *ExamService) CalculateExamPaperAnswer(user *systemMod.SysExam
 	if err != nil {
 		return nil, err
 	}
+
 	global.GES_LOG.Info("exam", zap.Any("questions", questions))
 	var examPaperQuestionCustomerAnswers []systemMod.ExamPaperQuestionCustomerAnswer
 	for _, item := range examPaperTitleItemObjects {
@@ -90,17 +91,22 @@ func (examService *ExamService) CalculateExamPaperAnswer(user *systemMod.SysExam
 			examPaperQuestionCustomerAnswers = append(examPaperQuestionCustomerAnswers, answer)
 		}
 	}
-	global.GES_LOG.Info("exam", zap.Any("questions", examPaperQuestionCustomerAnswers))
+	global.GES_LOG.Info("exam9", zap.Any("questions", examPaperQuestionCustomerAnswers))
 	// 计算每个题的对错，计算总得分
-	examPaperAnswer := ExamServiceApp.ExamPaperAnswerFromVM(examPaperSubmitVM, examPaper, examPaperQuestionCustomerAnswers, user, now)
+	examPaperAnswer := ExamServiceApp.ExamPaperAnswerFromVM(user.ID, examPaperSubmitVM, examPaper, examPaperQuestionCustomerAnswers, user, now)
 	examPaperAnswerInfo.ExamPaper = examPaper
 	examPaperAnswerInfo.ExamPaperAnswer = examPaperAnswer
 	examPaperAnswerInfo.ExamPaperQuestionCustomerAnswers = examPaperQuestionCustomerAnswers
 
 	// 数据库保存
-	err = ExamServiceApp.createExamPaperAnswerFromVM(examPaperAnswer)
+	examPaperQuestionCustomerAnswerID, err := ExamServiceApp.createExamPaperAnswerFromVM(examPaperAnswer)
 	if err != nil {
 		return nil, err
+	}
+
+	// 遍历更新每个 item 的 ExamPaperAnswerID 字段
+	for i := range examPaperQuestionCustomerAnswers {
+		examPaperQuestionCustomerAnswers[i].ExamPaperAnswerID = examPaperQuestionCustomerAnswerID
 	}
 
 	// 更新错题数
@@ -242,8 +248,12 @@ func (examService *ExamService) createExamPaperQuestionCustomerAnswer(examPaperQ
 	return global.GES_DB.Debug().Create(&examPaperQuestionCustomerAnswer).Error
 }
 
-func (examService *ExamService) createExamPaperAnswerFromVM(examPaperAnswer systemMod.ExamPaperAnswer) (err error) {
-	return global.GES_DB.Debug().Create(&examPaperAnswer).Error
+func (examService *ExamService) createExamPaperAnswerFromVM(examPaperAnswer systemMod.ExamPaperAnswer) (id int, err error) {
+	err = global.GES_DB.Debug().Create(&examPaperAnswer).Error
+	if err != nil {
+		return 0, err
+	}
+	return examPaperAnswer.ID, nil
 }
 
 func (examService *ExamService) selectExamPaperByID(id int) (examPaper systemMod.ExamPaper, err error) {
@@ -307,7 +317,7 @@ func (examService *ExamService) ExamPaperQuestionCustomerAnswerFromVM(question s
 		SubjectID:             examPaper.SubjectID,
 		ItemOrder:             itemOrder,
 		CreateTime:            now,
-		CreateUser:            2,
+		CreateUser:            user.ID,
 		QuestionType:          question.QuestionType,
 		QuestionTextContentID: question.InfoTextContentID,
 	}
@@ -354,7 +364,7 @@ func (examService *ExamService) setSpecialFromVM(examPaperQuestionCustomerAnswer
 		examPaperQuestionCustomerAnswer.CustomerScore = 0
 	}
 }
-func (examService *ExamService) ExamPaperAnswerFromVM(examPaperSubmitVM systemMod.ExamPaperSubmitVM, examPaper systemMod.ExamPaper, examPaperQuestionCustomerAnswers []systemMod.ExamPaperQuestionCustomerAnswer, user *systemMod.SysExamUser, now time.Time) systemMod.ExamPaperAnswer {
+func (examService *ExamService) ExamPaperAnswerFromVM(userID int, examPaperSubmitVM systemMod.ExamPaperSubmitVM, examPaper systemMod.ExamPaper, examPaperQuestionCustomerAnswers []systemMod.ExamPaperQuestionCustomerAnswer, user *systemMod.SysExamUser, now time.Time) systemMod.ExamPaperAnswer {
 	var systemScore int
 	var questionCorrect int
 
@@ -369,7 +379,7 @@ func (examService *ExamService) ExamPaperAnswerFromVM(examPaperSubmitVM systemMo
 		PaperName:       examPaper.Name,
 		DoTime:          examPaperSubmitVM.DoTime,
 		ExamPaperID:     examPaper.ID,
-		CreateUser:      2,
+		CreateUser:      userID,
 		CreateTime:      now,
 		SubjectID:       examPaper.SubjectID,
 		QuestionCount:   examPaper.QuestionCount,

@@ -79,6 +79,7 @@ type ExamPaperAnswerInfo struct {
 }
 
 type ExamPaperAnswer struct {
+	ID              int       `gorm:"column:id"`
 	ExamPaperID     int       `gorm:"column:exam_paper_id"`
 	PaperName       string    `gorm:"column:paper_name"`
 	PaperType       int       `gorm:"column:paper_type"`

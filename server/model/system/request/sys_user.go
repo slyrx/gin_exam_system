@@ -10,9 +10,10 @@ type Login struct {
 
 // QuestionQuery 定义了请求的结构
 type QuestionQuery struct {
-	ID           *int `json:"id"`
-	QuestionType *int `json:"questionType"`
-	SubjectID    int  `json:"subjectId"`
-	PageIndex    int  `json:"pageIndex"`
-	PageSize     int  `json:"pageSize"`
+	ID           string `json:"id"`
+	QuestionType int    `json:"questionType"`
+	SubjectID    int    `json:"subjectId"`
+	PageIndex    int    `json:"pageIndex"`
+	PageSize     int    `json:"pageSize"`
+	CheckUserID  int    `json:"checkUserId"`
 }

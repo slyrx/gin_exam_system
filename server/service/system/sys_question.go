@@ -44,10 +44,12 @@ func (questionService *QuestionService) GetQuestionsBySubject(subjectID int, lim
 	offset := (pageIndex - 1) * limit
 	if subjectID == 0 {
 		err := global.GES_DB.Debug().
+			Preload("UserQuestionErrors").
 			Where("deleted = ?", false).
-			Order("err_count desc").
+			Order("t_user_question_errors.err_count desc").
 			Limit(limit).
 			Offset(offset).
+			Joins("left join t_user_question_errors on t_user_question_errors.question_id = t_question.id").
 			Find(&questions).
 			Error
 		if err != nil {
@@ -55,10 +57,12 @@ func (questionService *QuestionService) GetQuestionsBySubject(subjectID int, lim
 		}
 	} else {
 		err := global.GES_DB.Debug().
-			Where("deleted = ? AND subject_id = ?", false, subjectID).
-			Order("err_count_total desc").
+			Preload("UserQuestionErrors").
+			Joins("left join t_user_question_errors on t_user_question_errors.question_id = t_question.id").
+			Order("t_user_question_errors.err_count desc").
 			Limit(limit).
 			Offset(offset).
+			Where("deleted = ? AND subject_id = ?", false, subjectID).
 			Find(&questions).
 			Error
 		if err != nil {
