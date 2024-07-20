@@ -205,6 +205,32 @@ func (s *ExamService) SubmitAnswer(req request.AnswerSubmitRequest, userID int) 
 				if err := s.updateErrorCount(tx, answerItem.QuestionID); err != nil {
 					return err
 				}
+
+				var wrongBook systemMod.UserWrongBook
+				result := tx.Where(systemMod.UserWrongBook{UserID: userID, QuestionID: answerItem.QuestionID}).
+					FirstOrCreate(&wrongBook)
+
+				if result.Error != nil {
+					return fmt.Errorf("failed to find or create wrong book entry: %w", result.Error)
+				}
+
+				// 如果是新创建的记录，result.RowsAffected 会等于 1
+				if result.RowsAffected == 0 {
+					// 记录已存在，增加错误计数
+					wrongBook.ErrorCount++
+				} else {
+					// 新记录，设置初始值
+					wrongBook.ExamPaperID = req.ID
+					wrongBook.SubjectID = question.SubjectID
+					wrongBook.CreateTime = time.Now()
+				}
+
+				wrongBook.UpdateTime = time.Now()
+
+				if err := tx.Save(&wrongBook).Error; err != nil {
+					return fmt.Errorf("failed to update wrong book: %w", err)
+				}
+
 			}
 		}
 
