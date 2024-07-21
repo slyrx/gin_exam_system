@@ -58,3 +58,7 @@ func OkWithMessage(message string, c *gin.Context) {
 func OkWithMessageExam(message string, c *gin.Context) {
 	Result(EXAMSUCCESS, message, "成功", c)
 }
+
+func OkWithMessageExamInterface(message interface{}, c *gin.Context) {
+	Result(EXAMSUCCESS, message, "成功", c)
+}

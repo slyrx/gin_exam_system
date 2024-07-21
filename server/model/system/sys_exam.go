@@ -78,9 +78,9 @@ func (QuestionErrorCount) TableName() string {
 }
 
 type ExamPaperTextContent1 struct {
-	ID         int       `gorm:"column:id"`
-	Content    string    `gorm:"column:content"`
-	CreateTime time.Time `gorm:"column:create_time"`
+	ID         int        `gorm:"column:id"`
+	Content    string     `gorm:"column:content"`
+	CreateTime *time.Time `gorm:"column:create_time"`
 }
 
 func (ExamPaperTextContent1) TableName() string {
@@ -102,21 +102,21 @@ type QuestionItem1 struct {
 
 // ExamPaper 结构体
 type ExamPaper_1 struct {
-	ID                 int       `gorm:"primaryKey;autoIncrement"`              // 主键，自增
-	Name               string    `gorm:"type:varchar(255);not null"`            // 试卷名称
-	SubjectID          int       `gorm:"not null"`                              // 学科
-	PaperType          int       `gorm:"not null"`                              // 试卷类型 (1.固定试卷 4.时段试卷 6.任务试卷)
-	GradeLevel         int       `gorm:"not null"`                              // 年级
-	Score              int       `gorm:"not null"`                              // 试卷总分(千分制)
-	QuestionCount      int       `gorm:"not null"`                              // 题目数量
-	SuggestTime        int       `gorm:"not null"`                              // 建议时长(分钟)
-	LimitStartTime     time.Time `gorm:"type:datetime"`                         // 时段试卷 开始时间
-	LimitEndTime       time.Time `gorm:"type:datetime"`                         // 时段试卷 结束时间
-	FrameTextContentID int       `gorm:"column:frame_text_content_id;not null"` // 试卷框架 内容为JSON
-	CreateUser         int       `gorm:"not null"`                              // 创建用户
-	CreateTime         time.Time `gorm:"type:datetime;not null"`                // 创建时间
-	Deleted            []byte    `gorm:"not null;default:false"`                // 是否删除
-	TaskExamID         int       `gorm:"default:0"`                             // 任务试卷ID
+	ID                 int        `gorm:"primaryKey;autoIncrement"`              // 主键，自增
+	Name               string     `gorm:"type:varchar(255);not null"`            // 试卷名称
+	SubjectID          int        `gorm:"not null"`                              // 学科
+	PaperType          int        `gorm:"not null"`                              // 试卷类型 (1.固定试卷 4.时段试卷 6.任务试卷)
+	GradeLevel         int        `gorm:"not null"`                              // 年级
+	Score              int        `gorm:"not null"`                              // 试卷总分(千分制)
+	QuestionCount      int        `gorm:"not null"`                              // 题目数量
+	SuggestTime        int        `gorm:"not null"`                              // 建议时长(分钟)
+	LimitStartTime     *time.Time `gorm:"type:datetime"`                         // 时段试卷 开始时间
+	LimitEndTime       *time.Time `gorm:"type:datetime"`                         // 时段试卷 结束时间
+	FrameTextContentID int        `gorm:"column:frame_text_content_id;not null"` // 试卷框架 内容为JSON
+	CreateUser         int        `gorm:"not null"`                              // 创建用户
+	CreateTime         time.Time  `gorm:"type:datetime;not null"`                // 创建时间
+	Deleted            []byte     `gorm:"not null;default:false"`                // 是否删除
+	TaskExamID         int        `gorm:"default:0"`                             // 任务试卷ID
 }
 
 func (ExamPaper_1) TableName() string {

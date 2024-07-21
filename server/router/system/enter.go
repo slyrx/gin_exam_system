@@ -5,4 +5,5 @@ type RouterGroup struct {
 	JwtRouter
 	ExamRouter
 	QuestionRouter
+	ExamPaperRouter
 }
