@@ -2,6 +2,7 @@ package system
 
 import (
 	"errors"
+	"net/http"
 	"strconv"
 
 	"github.com/slyrx/gin_exam_system/server/model/common/response"
@@ -102,4 +103,22 @@ func (e *ExamPaperApi) CreateErrorQuestionPaperByUser(c *gin.Context) {
 	}
 
 	response.OkWithMessageExamInterface(sysModRes.CreateErrorQuestionPaperResponse{PaperID: paperID}, c)
+}
+
+func (h *ExamPaperApi) AssignPaperVisibility(c *gin.Context) {
+	var req request.AssignPaperVisibilityRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	// 获取当前用户ID (假设我们已经在中间件中设置了用户信息)
+	userID := examService.GetUserInfo(utils.GetCurrentUser(c).UserName).ID
+
+	if err := examPaperService.AssignPaperVisibility(req, userID); err != nil {
+		response.FailWithMessage("Failed to assign paper visibility", c)
+		return
+	}
+
+	response.OkWithMessageExam("成功", c)
 }

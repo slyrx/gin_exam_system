@@ -57,3 +57,8 @@ type CreateErrorQuestionPaperRequest struct {
 	UserID     int `json:"userId" binding:"required"`
 	Limit      int `json:"limit" binding:"required"` // 限制题目数量
 }
+
+type AssignPaperVisibilityRequest struct {
+	PaperID uint   `json:"paperId" binding:"required"`
+	UserIDs []uint `json:"userIds" binding:"required"`
+}

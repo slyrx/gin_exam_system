@@ -418,3 +418,29 @@ func (e *ExamPaperService) CreateErrorQuestionPaperByUser(subjectID int, gradeLe
 
 	return paperID, nil
 }
+
+func (e *ExamPaperService) AssignPaperVisibility(req request.AssignPaperVisibilityRequest, teacherID int) error {
+	// 开始事务
+	tx := global.GES_DB.Debug().Begin()
+
+	for _, userID := range req.UserIDs {
+		visibility := systemMod.PaperVisibility{
+			PaperID:   int(req.PaperID),
+			UserID:    int(userID),
+			CreatedBy: teacherID,
+			CreatedAt: time.Now(),
+		}
+
+		if err := tx.Create(&visibility).Error; err != nil {
+			tx.Rollback()
+			return err
+		}
+	}
+
+	// 提交事务
+	if err := tx.Commit().Error; err != nil {
+		return err
+	}
+
+	return nil
+}

@@ -147,3 +147,16 @@ type TitleItem struct {
 	Name          string           `json:"name"`
 	QuestionItems []QuestionItem_1 `json:"questionItems"`
 }
+
+type PaperVisibility struct {
+	ID        int       `gorm:"primaryKey;autoIncrement"`
+	PaperID   int       `gorm:"column:paper_id;not null"`
+	UserID    int       `gorm:"column:user_id;not null"`
+	CreatedBy int       `gorm:"column:created_by;not null"`
+	CreatedAt time.Time `gorm:"column:created_at;not null"`
+}
+
+// TableName sets the insert table name for this struct type
+func (PaperVisibility) TableName() string {
+	return "t_paper_visibility"
+}
