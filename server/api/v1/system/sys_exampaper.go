@@ -69,3 +69,37 @@ func (e *ExamPaperApi) parseSuggestTime(suggestTime interface{}) (int, error) {
 		return 0, errors.New("无效的 SuggestTime 类型")
 	}
 }
+
+func (e *ExamPaperApi) CreateErrorQuestionPaper(c *gin.Context) {
+	var req request.CreateErrorQuestionPaperRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+
+	userID := examService.GetUserInfo(utils.GetCurrentUser(c).UserName).ID // 假设这个函数已经实现
+	paperID, err := examPaperService.CreateErrorQuestionPaper(req.SubjectID, req.GradeLevel, userID)
+	if err != nil {
+		response.FailWithMessage("Failed to create exam paper", c)
+		return
+	}
+
+	response.OkWithMessageExamInterface(sysModRes.CreateErrorQuestionPaperResponse{PaperID: paperID}, c)
+}
+
+func (e *ExamPaperApi) CreateErrorQuestionPaperByUser(c *gin.Context) {
+	var req request.CreateErrorQuestionPaperRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+
+	userID := examService.GetUserInfo(utils.GetCurrentUser(c).UserName).ID // 假设这个函数已经实现
+	paperID, err := examPaperService.CreateErrorQuestionPaperByUser(req.SubjectID, req.GradeLevel, userID, req.UserID)
+	if err != nil {
+		response.FailWithMessage("Failed to create exam paper", c)
+		return
+	}
+
+	response.OkWithMessageExamInterface(sysModRes.CreateErrorQuestionPaperResponse{PaperID: paperID}, c)
+}

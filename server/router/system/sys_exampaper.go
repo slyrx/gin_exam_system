@@ -12,5 +12,7 @@ func (s *ExamPaperRouter) InitExamPaperRouter(Router *gin.RouterGroup) {
 	examPaperApi := v1.ApiGroupApp.SystemApiGroup.ExamPaperApi
 	{
 		examPaperRouter.POST("paper/edit", examPaperApi.SetExamPaper)
+		examPaperRouter.POST("paper/get", examPaperApi.CreateErrorQuestionPaper)
+		examPaperRouter.POST("paper/getByUserId", examPaperApi.CreateErrorQuestionPaper)
 	}
 }

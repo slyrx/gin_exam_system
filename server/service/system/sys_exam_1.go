@@ -178,17 +178,18 @@ func (s *ExamService) SubmitAnswer(req request.AnswerSubmitRequest, userID int) 
 
 			// 创建题目答案记录
 			answer := systemMod.ExamPaperQuestionCustomerAnswer_1{
-				QuestionID:        answerItem.QuestionID,
-				ExamPaperID:       req.ID,
-				ExamPaperAnswerID: examPaperAnswer.ID,
-				QuestionType:      question.QuestionType,
-				SubjectID:         question.SubjectID,
-				DoRight:           isCorrect,
-				CustomerScore:     score,
-				QuestionScore:     question.Score,
-				CreateUser:        userID,
-				CreateTime:        time.Now(),
-				ItemOrder:         answerItem.ItemOrder,
+				QuestionID:            answerItem.QuestionID,
+				ExamPaperID:           req.ID,
+				ExamPaperAnswerID:     examPaperAnswer.ID,
+				QuestionType:          question.QuestionType,
+				SubjectID:             question.SubjectID,
+				DoRight:               isCorrect,
+				CustomerScore:         score,
+				QuestionScore:         question.Score,
+				CreateUser:            userID,
+				CreateTime:            time.Now(),
+				ItemOrder:             answerItem.ItemOrder,
+				QuestionTextContentID: question.InfoTextContentID,
 			}
 
 			// 仅在 answerItem.Content 不为空时设置 Answer 字段
@@ -207,30 +208,35 @@ func (s *ExamService) SubmitAnswer(req request.AnswerSubmitRequest, userID int) 
 				}
 
 				var wrongBook systemMod.UserWrongBook
-				result := tx.Where(systemMod.UserWrongBook{UserID: userID, QuestionID: answerItem.QuestionID}).
-					FirstOrCreate(&wrongBook)
+				// 尝试查找现有记录
+				result := tx.Where("user_id = ? AND question_id = ?", userID, answerItem.QuestionID).First(&wrongBook)
 
-				if result.Error != nil {
-					return fmt.Errorf("failed to find or create wrong book entry: %w", result.Error)
+				if result.Error != nil && !errors.Is(result.Error, gorm.ErrRecordNotFound) {
+					return err
 				}
 
-				// 如果是新创建的记录，result.RowsAffected 会等于 1
-				if result.RowsAffected == 0 {
-					// 记录已存在，增加错误计数
-					wrongBook.ErrorCount++
+				if errors.Is(result.Error, gorm.ErrRecordNotFound) {
+					// 记录不存在，创建新记录
+					wrongBook = systemMod.UserWrongBook{
+						UserID:      userID,
+						QuestionID:  answerItem.QuestionID,
+						ExamPaperID: req.ID,
+						SubjectID:   question.SubjectID,
+						CreateTime:  time.Now(),
+						UpdateTime:  time.Now(),
+						ErrorCount:  1, // 初始错误计数
+					}
+					if err := tx.Create(&wrongBook).Error; err != nil {
+						return err
+					}
 				} else {
-					// 新记录，设置初始值
-					wrongBook.ExamPaperID = req.ID
-					wrongBook.SubjectID = question.SubjectID
-					wrongBook.CreateTime = time.Now()
+					// 记录已存在，增加错误计数并更新
+					wrongBook.ErrorCount++
+					wrongBook.UpdateTime = time.Now()
+					if err := tx.Save(&wrongBook).Error; err != nil {
+						return err
+					}
 				}
-
-				wrongBook.UpdateTime = time.Now()
-
-				if err := tx.Save(&wrongBook).Error; err != nil {
-					return fmt.Errorf("failed to update wrong book: %w", err)
-				}
-
 			}
 		}
 

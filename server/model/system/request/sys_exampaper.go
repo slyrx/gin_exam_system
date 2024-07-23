@@ -50,3 +50,10 @@ type QuestionItemObject struct {
 	Score    *int    `json:"score"`
 	ItemUUID *string `json:"itemUuid"`
 }
+
+type CreateErrorQuestionPaperRequest struct {
+	SubjectID  int `json:"subjectId" binding:"required"`
+	GradeLevel int `json:"gradeLevel" binding:"required"`
+	UserID     int `json:"userId" binding:"required"`
+	Limit      int `json:"limit" binding:"required"` // 限制题目数量
+}

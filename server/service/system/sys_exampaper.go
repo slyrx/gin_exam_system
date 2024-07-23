@@ -216,3 +216,205 @@ func (e *ExamPaperService) parseSuggestTime(suggestTime interface{}) (int, error
 		return 0, errors.New("无效的 SuggestTime 类型")
 	}
 }
+
+func (e *ExamPaperService) CreateErrorQuestionPaper(subjectID int, gradeLevel int, createUserID int) (int, error) {
+	var paperID int
+	err := global.GES_DB.Debug().Transaction(func(tx *gorm.DB) error {
+		// 1. 获取错题
+		var errorQuestions []struct {
+			QuestionID int
+			ErrorCount int
+		}
+		if err := tx.Table("t_question_error_count").
+			Select("question_id, error_count").
+			Where("error_count > ?", 5).
+			Order("error_count DESC").
+			Limit(20).
+			Scan(&errorQuestions).Error; err != nil {
+			return err
+		}
+
+		// 2. 创建试卷
+		examPaper := systemMod.ExamPaper_1{
+			Name:        "错题重组试卷",
+			SubjectID:   subjectID,
+			PaperType:   1, // 假设 6 表示错题试卷
+			GradeLevel:  gradeLevel,
+			CreateUser:  createUserID,
+			CreateTime:  time.Now(),
+			SuggestTime: 10,
+			Deleted:     []byte{0},
+		}
+		if err := tx.Create(&examPaper).Error; err != nil {
+			return err
+		}
+
+		// 3. 获取题目详情并生成 JSON
+
+		var titleItems []systemMod.TitleItem
+		var totalScore int
+		itemOrder := 1
+
+		for _, eq := range errorQuestions {
+			var question systemMod.Question_1
+			if err := tx.First(&question, eq.QuestionID).Error; err != nil {
+				return err
+			}
+
+			var textContent systemMod.ExamPaperTextContent1
+			if err := tx.First(&textContent, question.InfoTextContentID).Error; err != nil {
+				return err
+			}
+
+			questionItem := systemMod.QuestionItem_1{
+				ID:        question.ID,
+				ItemOrder: itemOrder,
+			}
+
+			// 假设所有题目属于同一个 TitleItem
+			if len(titleItems) == 0 {
+				titleItems = append(titleItems, systemMod.TitleItem{
+					Name:          "错题重组",
+					QuestionItems: []systemMod.QuestionItem_1{questionItem},
+				})
+			} else {
+				titleItems[0].QuestionItems = append(titleItems[0].QuestionItems, questionItem)
+			}
+
+			totalScore += question.Score
+			itemOrder++
+		}
+
+		// 4. 存储试卷内容
+		now := time.Now()
+		questionJson, err := json.Marshal(titleItems)
+		if err != nil {
+			return err
+		}
+
+		frameTextContent := systemMod.ExamPaperTextContent1{
+			Content:    string(questionJson),
+			CreateTime: &now,
+		}
+		if err := tx.Create(&frameTextContent).Error; err != nil {
+			return err
+		}
+
+		// 5. 更新试卷信息
+		examPaper.Score = totalScore
+		examPaper.QuestionCount = itemOrder - 1
+		examPaper.FrameTextContentID = frameTextContent.ID
+		if err := tx.Save(&examPaper).Error; err != nil {
+			return err
+		}
+		paperID = examPaper.ID
+		return nil
+	})
+
+	if err != nil {
+		return 0, err
+	}
+
+	return paperID, nil
+}
+
+func (e *ExamPaperService) CreateErrorQuestionPaperByUser(subjectID int, gradeLevel int, createUserID int, examUserID int) (int, error) {
+	var paperID int
+	err := global.GES_DB.Debug().Transaction(func(tx *gorm.DB) error {
+		// 1. 获取错题
+		var errorQuestions []struct {
+			QuestionID int
+			ErrorCount int
+		}
+		if err := tx.Table("t_user_wrong_book").
+			Select("question_id, error_count").
+			Where("error_count > ? AND user_id = ?", 5, examUserID).
+			Order("error_count DESC").
+			Limit(20).
+			Scan(&errorQuestions).Error; err != nil {
+			return err
+		}
+
+		// 2. 创建试卷
+		examPaper := systemMod.ExamPaper_1{
+			Name:        "错题重组试卷",
+			SubjectID:   subjectID,
+			PaperType:   1, // 假设 6 表示错题试卷
+			GradeLevel:  gradeLevel,
+			CreateUser:  createUserID,
+			CreateTime:  time.Now(),
+			SuggestTime: 10,
+			Deleted:     []byte{0},
+		}
+		if err := tx.Create(&examPaper).Error; err != nil {
+			return err
+		}
+
+		// 3. 获取题目详情并生成 JSON
+
+		var titleItems []systemMod.TitleItem
+		var totalScore int
+		itemOrder := 1
+
+		for _, eq := range errorQuestions {
+			var question systemMod.Question_1
+			if err := tx.First(&question, eq.QuestionID).Error; err != nil {
+				return err
+			}
+
+			var textContent systemMod.ExamPaperTextContent1
+			if err := tx.First(&textContent, question.InfoTextContentID).Error; err != nil {
+				return err
+			}
+
+			questionItem := systemMod.QuestionItem_1{
+				ID:        question.ID,
+				ItemOrder: itemOrder,
+			}
+
+			// 假设所有题目属于同一个 TitleItem
+			if len(titleItems) == 0 {
+				titleItems = append(titleItems, systemMod.TitleItem{
+					Name:          "错题重组",
+					QuestionItems: []systemMod.QuestionItem_1{questionItem},
+				})
+			} else {
+				titleItems[0].QuestionItems = append(titleItems[0].QuestionItems, questionItem)
+			}
+
+			totalScore += question.Score
+			itemOrder++
+		}
+
+		// 4. 存储试卷内容
+		now := time.Now()
+		questionJson, err := json.Marshal(titleItems)
+		if err != nil {
+			return err
+		}
+
+		frameTextContent := systemMod.ExamPaperTextContent1{
+			Content:    string(questionJson),
+			CreateTime: &now,
+		}
+		if err := tx.Create(&frameTextContent).Error; err != nil {
+			return err
+		}
+
+		// 5. 更新试卷信息
+		examPaper.Score = totalScore
+		examPaper.QuestionCount = itemOrder - 1
+		examPaper.FrameTextContentID = frameTextContent.ID
+		if err := tx.Save(&examPaper).Error; err != nil {
+			return err
+		}
+		paperID = examPaper.ID
+		return nil
+	})
+
+	if err != nil {
+		return 0, err
+	}
+
+	return paperID, nil
+}

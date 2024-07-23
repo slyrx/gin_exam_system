@@ -15,3 +15,7 @@ type CreateExamPaperResponse struct {
 	TitleItems    []request.TitleItem `json:"titleItems"`
 	Score         string              `json:"score"`
 }
+
+type CreateErrorQuestionPaperResponse struct {
+	PaperID int `json:"paperId"`
+}

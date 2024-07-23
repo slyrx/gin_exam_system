@@ -77,6 +77,21 @@ func (QuestionErrorCount) TableName() string {
 	return "t_question_error_count"
 }
 
+type UserWrongBook struct {
+	ID          int       `gorm:"primaryKey;autoIncrement"`
+	UserID      int       `gorm:"column:user_id;not null"`
+	QuestionID  int       `gorm:"column:question_id;not null"`
+	ExamPaperID int       `gorm:"column:exam_paper_id;not null"`
+	SubjectID   int       `gorm:"column:subject_id;not null"` // 新增字段
+	CreateTime  time.Time `gorm:"column:create_time;not null"`
+	UpdateTime  time.Time `gorm:"column:update_time;not null"`
+	ErrorCount  int       `gorm:"column:error_count;not null;default:1"`
+}
+
+func (UserWrongBook) TableName() string {
+	return "t_user_wrong_book"
+}
+
 type ExamPaperTextContent1 struct {
 	ID         int        `gorm:"column:id"`
 	Content    string     `gorm:"column:content"`
@@ -123,17 +138,12 @@ func (ExamPaper_1) TableName() string {
 	return "t_exam_paper"
 }
 
-type UserWrongBook struct {
-	ID          int       `gorm:"primaryKey;autoIncrement"`
-	UserID      int       `gorm:"column:user_id;not null"`
-	QuestionID  int       `gorm:"column:question_id;not null"`
-	ExamPaperID int       `gorm:"column:exam_paper_id;not null"`
-	SubjectID   int       `gorm:"column:subject_id;not null"` // 新增字段
-	CreateTime  time.Time `gorm:"column:create_time;not null"`
-	UpdateTime  time.Time `gorm:"column:update_time;not null"`
-	ErrorCount  int       `gorm:"column:error_count;not null;default:1"`
+type QuestionItem_1 struct {
+	ID        int `json:"id"`
+	ItemOrder int `json:"itemOrder"`
 }
 
-func (UserWrongBook) TableName() string {
-	return "t_user_wrong_book"
+type TitleItem struct {
+	Name          string           `json:"name"`
+	QuestionItems []QuestionItem_1 `json:"questionItems"`
 }
