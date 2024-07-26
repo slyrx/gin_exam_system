@@ -39,9 +39,25 @@ func (questionService *QuestionService) GetCountQuestionsBySubject(subjectID int
 	return count, nil
 }
 
-func (questionService *QuestionService) GetQuestionsBySubject(subjectID int, limit int, pageIndex int) ([]systemMod.Question, error) {
+func (questionService *QuestionService) GetQuestionsBySubject(subjectID int, limit int, pageIndex int) ([]systemMod.Question, int, error) {
 	var questions []systemMod.Question
 	offset := (pageIndex - 1) * limit
+	var totalCount int64
+
+	// 查询总数
+	countQuery := global.GES_DB.Debug().
+		Table("t_question").
+		Joins("left join t_user_question_errors on t_user_question_errors.question_id = t_question.id").
+		Where("t_question.deleted = ?", false)
+
+	if subjectID != 0 {
+		countQuery = countQuery.Where("t_question.subject_id = ?", subjectID)
+	}
+
+	if err := countQuery.Count(&totalCount).Error; err != nil {
+		return nil, 0, err
+	}
+
 	if subjectID == 0 {
 		err := global.GES_DB.Debug().
 			Preload("UserQuestionErrors").
@@ -53,7 +69,7 @@ func (questionService *QuestionService) GetQuestionsBySubject(subjectID int, lim
 			Find(&questions).
 			Error
 		if err != nil {
-			return nil, err
+			return nil, int(totalCount), err
 		}
 	} else {
 		err := global.GES_DB.Debug().
@@ -66,11 +82,11 @@ func (questionService *QuestionService) GetQuestionsBySubject(subjectID int, lim
 			Find(&questions).
 			Error
 		if err != nil {
-			return nil, err
+			return nil, int(totalCount), err
 		}
 	}
 
-	return questions, nil
+	return questions, int(totalCount), nil
 }
 
 // 查询和排序

@@ -18,14 +18,14 @@ func (e *QuestionApi) GetPageInfo(c *gin.Context) {
 		return
 	}
 	// 查询题目
-	count, err := questionService.GetCountQuestionsBySubject(query.SubjectID)
-	if err != nil {
-		response.FailWithMessage(err.Error(), c)
-		return
-	}
+	// count, err := questionService.GetCountQuestionsBySubject(query.SubjectID)
+	// if err != nil {
+	// 	response.FailWithMessage(err.Error(), c)
+	// 	return
+	// }
 
 	// 查询题目
-	questions, err := questionService.GetQuestionsBySubject(query.SubjectID, query.PageSize, query.PageIndex)
+	questions, totalCount, err := questionService.GetQuestionsBySubject(query.SubjectID, query.PageSize, query.PageIndex)
 	global.GES_LOG.Info("questions", zap.Any("questions", questions))
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
@@ -33,7 +33,7 @@ func (e *QuestionApi) GetPageInfo(c *gin.Context) {
 	}
 
 	// 查询题目内容
-	total := count // 总记录数
+	total := totalCount // 总记录数
 
 	respQuestions := questionService.MapSourceToTargetQuestions(questions)
 	global.GES_LOG.Info("exam8", zap.Any("total", total))

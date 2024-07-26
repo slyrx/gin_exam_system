@@ -131,7 +131,7 @@ type ExamPaper_1 struct {
 	CreateUser         int        `gorm:"not null"`                              // 创建用户
 	CreateTime         time.Time  `gorm:"type:datetime;not null"`                // 创建时间
 	Deleted            []byte     `gorm:"not null;default:false"`                // 是否删除
-	TaskExamID         int        `gorm:"default:0"`                             // 任务试卷ID
+	TaskExamID         *int       `gorm:"default:null"`                          // 任务试卷ID
 }
 
 func (ExamPaper_1) TableName() string {
