@@ -8,6 +8,7 @@ type ApiGroup struct {
 	ExamApi
 	QuestionApi
 	ExamPaperApi
+	JavaProxyApi
 }
 
 var (

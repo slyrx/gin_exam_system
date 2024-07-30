@@ -8,10 +8,11 @@ import (
 type QuestionRouter struct{}
 
 func (s *QuestionRouter) InitQuestionRouter(Router *gin.RouterGroup) {
-	questionRouter := Router.Group("api/admin")
+	questionRouter := Router.Group("api/admin/question")
 	questionApi := v1.ApiGroupApp.SystemApiGroup.QuestionApi
 	{
-		questionRouter.POST("question/page", questionApi.GetPageInfo)
+		questionRouter.POST("page", questionApi.GetPageInfo)
 		questionRouter.GET("createUserQuestionTable", questionApi.CreateUserQuestionTable)
 	}
+
 }

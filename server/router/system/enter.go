@@ -6,4 +6,5 @@ type RouterGroup struct {
 	ExamRouter
 	QuestionRouter
 	ExamPaperRouter
+	JavaProxyRouter
 }

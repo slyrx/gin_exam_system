@@ -82,10 +82,25 @@ func Routers() *gin.Engine {
 		})
 	}
 	{
-		systemRouter.InitExamRouter(PublicGroup)      // 考试相关路由
-		systemRouter.InitQuestionRouter(PublicGroup)  // 考试相关路由
-		systemRouter.InitExamPaperRouter(PublicGroup) // 考试相关路由
-		systemRouter.InitBaseRouter(PublicGroup)      // 注册基础功能路由 不做鉴权
+		systemRouter.InitExamRouter(PublicGroup)                           // 考试相关路由
+		systemRouter.InitQuestionRouter(PublicGroup)                       // 考试相关路由
+		systemRouter.InitExamPaperRouter(PublicGroup)                      // 考试相关路由
+		systemRouter.InitBaseRouter(PublicGroup)                           // 注册基础功能路由 不做鉴权
+		systemRouter.InitJavaProxyUserRouter(PublicGroup)                  // 考试相关路由
+		systemRouter.InitJavaProxyEducationRouter(PublicGroup)             // 考试相关路由
+		systemRouter.InitJavaProxyExamRouter(PublicGroup)                  // 考试相关路由
+		systemRouter.InitJavaProxyTaskRouter(PublicGroup)                  // 考试相关路由
+		systemRouter.InitJavaProxyMessageRouter(PublicGroup)               // 考试相关路由
+		systemRouter.InitJavaProxyDashboardRouter(PublicGroup)             // 考试相关路由
+		systemRouter.InitJavaProxyQuestionSelectRouter(PublicGroup)        // 考试相关路由
+		systemRouter.InitJavaProxyUploadRouter(PublicGroup)                // 考试相关路由
+		systemRouter.InitJavaProxyQuestionEditRouter(PublicGroup)          // 考试相关路由
+		systemRouter.InitJavaProxyExamPaperSelectRouter(PublicGroup)       // 考试相关路由
+		systemRouter.InitJavaProxyExamPaperDeleteRouter(PublicGroup)       // 考试相关路由
+		systemRouter.InitJavaProxyExamPaperAnswerRouter(PublicGroup)       // 考试相关路由
+		systemRouter.InitJavaProxyExamPaperTaskExamPageRouter(PublicGroup) // 考试相关路由
+		systemRouter.InitJavaProxyQuestionDeleteRouter(PublicGroup)        // 考试相关路由
+
 	}
 	PrivateGroup := Routers.Group(global.GES_CONFIG.System.RouterPrefix)
 	PrivateGroup.Use(middleware.JWTAuth()).Use(middleware.CasbinHandler())
