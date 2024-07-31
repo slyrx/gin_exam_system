@@ -1,0 +1,5 @@
+p, admin, /api/admin/education/subject/list, POST
+p, admin, /api/*, *
+p, user, /api/user/*, GET
+g, alice, admin
+g, bob, user

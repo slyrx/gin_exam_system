@@ -2,6 +2,7 @@ package system
 
 import (
 	"errors"
+	"os"
 	"strconv"
 	"sync"
 
@@ -9,6 +10,7 @@ import (
 
 	"github.com/casbin/casbin/v2"
 	"github.com/casbin/casbin/v2/model"
+	fileadapter "github.com/casbin/casbin/v2/persist/file-adapter"
 	gormadapter "github.com/casbin/gorm-adapter/v3"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/slyrx/gin_exam_system/server/model/system/request"
@@ -158,10 +160,14 @@ var (
 
 func (casbinService *CasbinService) Casbin() *casbin.SyncedCachedEnforcer {
 	once.Do(func() {
-		a, err := gormadapter.NewAdapterByDB(global.GES_DB)
-		if err != nil {
-			zap.L().Error("适配数据库失败请检查casbin表是否为InnoDB引擎!", zap.Error(err))
-			return
+		// a, err := gormadapter.NewAdapterByDB(global.GES_DB)
+		// if err != nil {
+		// 	zap.L().Error("适配数据库失败请检查casbin表是否为InnoDB引擎!", zap.Error(err))
+		// 	return
+		// }
+		a := fileadapter.NewAdapter("./policy.csv")
+		if _, err := os.Stat("./policy.csv"); os.IsNotExist(err) {
+			global.GES_LOG.Info("CasbinHandler", zap.Any(" syncedCachedEnforcer err", "Policy file does not exist"))
 		}
 		text := `
 		[request_definition]
@@ -177,14 +183,18 @@ func (casbinService *CasbinService) Casbin() *casbin.SyncedCachedEnforcer {
 		e = some(where (p.eft == allow))
 		
 		[matchers]
-		m = r.sub == p.sub && keyMatch2(r.obj,p.obj) && r.act == p.act
+		m = r.sub == p.sub && keyMatch2(r.obj, p.obj) && (r.act == p.act || p.act == "*")
 		`
 		m, err := model.NewModelFromString(text)
 		if err != nil {
 			zap.L().Error("字符串加载模型失败!", zap.Error(err))
 			return
 		}
-		syncedCachedEnforcer, _ = casbin.NewSyncedCachedEnforcer(m, a)
+		syncedCachedEnforcer, err = casbin.NewSyncedCachedEnforcer(m, a)
+		if err != nil {
+			global.GES_LOG.Info("CasbinHandler", zap.Any(" syncedCachedEnforcer err", err))
+		}
+		global.GES_LOG.Info("CasbinHandler", zap.Any(" syncedCachedEnforcer ", syncedCachedEnforcer), zap.Any("a", a), zap.Any("LoadPolicy", a.LoadPolicy(m)))
 		syncedCachedEnforcer.SetExpireTime(60 * 60)
 		_ = syncedCachedEnforcer.LoadPolicy()
 	})

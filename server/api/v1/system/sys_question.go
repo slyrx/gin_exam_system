@@ -1,10 +1,15 @@
 package system
 
 import (
+	"fmt"
+	"strings"
+
 	"github.com/gin-gonic/gin"
 	"github.com/slyrx/gin_exam_system/server/model/common/response"
 	systemMod "github.com/slyrx/gin_exam_system/server/model/system/request"
 	"github.com/slyrx/gin_exam_system/server/others/global"
+
+	// "github.com/slyrx/gin_exam_system/server/others/utils"
 	"go.uber.org/zap"
 )
 
@@ -23,6 +28,15 @@ func (e *QuestionApi) GetPageInfo(c *gin.Context) {
 	// 	response.FailWithMessage(err.Error(), c)
 	// 	return
 	// }
+	path := c.Request.URL.Path
+	// waitUse, _ := utils.GetClaims(c)
+	obj := strings.TrimPrefix(path, global.GES_CONFIG.System.RouterPrefix)
+	// 获取请求方法
+	act := c.Request.Method
+	// 获取用户的角色
+	// sub := strconv.Itoa(int(waitUse.AuthorityId))
+	global.GES_LOG.Info("CasbinHandler", zap.Any("obj", obj), zap.Any("act", act))
+	fmt.Println("ccc0", obj, act)
 
 	// 查询题目
 	questions, totalCount, err := questionService.GetQuestionsBySubject(query.SubjectID, query.PageSize, query.PageIndex)

@@ -51,6 +51,7 @@ func GetClaims(c *gin.Context) (*systemReq.CustomClaims, error) {
 	token := GetToken(c)
 	j := NewJWT()
 	claims, err := j.ParseToken(token)
+	global.GES_LOG.Info("GetClaims", zap.Any("claims", claims))
 	if err != nil {
 		global.GES_LOG.Error("从Gin的Context中获取从jwt解析信息失败, 请检查请求头是否存在x-token且claims是否为规定结构")
 	}
