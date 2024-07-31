@@ -1,5 +1,18 @@
-p, admin, /api/admin/education/subject/list, POST
 p, admin, /api/*, *
-p, user, /api/user/*, GET
-g, alice, admin
-g, bob, user
+p, student, /api/student/*, *
+p, teacher3, /api/admin/education/subject/list, POST
+p, teacher3, /api/admin/education/subject/page, POST
+p, teacher3, /api/admin/education/subject/select/*, POST
+p, teacher3, /api/admin/education/subject/edit, POST
+p, teacher3, /api/admin/education/subject/delete/*, POST
+p, teacher3, /api/admin/exam/paper/page/, POST
+p, teacher3, /api/admin/exam/paper/select/*, POST
+p, teacher3, /api/admin/exam/paper/edit, POST
+p, teacher3, /api/admin/exam/paper/delete/*, POST
+p, teacher3, /api/admin/exam/paper/taskExamPage, POST
+p, teacher3, /api/admin/question/page, POST
+p, teacher3, /api/admin/question/select/*, POST
+p, teacher3, /api/admin/question/edit, POST
+p, teacher3, /api/admin/question/delete/*, POST
+g, teacher2, admin
+g, std1, user

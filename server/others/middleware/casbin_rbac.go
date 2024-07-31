@@ -9,6 +9,7 @@ import (
 	"github.com/slyrx/gin_exam_system/server/others/global"
 
 	// "github.com/slyrx/gin_exam_system/server/others/utils"
+	"github.com/slyrx/gin_exam_system/server/others/utils"
 	"github.com/slyrx/gin_exam_system/server/service"
 	"go.uber.org/zap"
 )
@@ -28,7 +29,7 @@ func CasbinHandler() gin.HandlerFunc {
 		act := c.Request.Method
 		// 获取用户的角色
 		// sub := strconv.Itoa(888)
-		sub := "admin"
+		sub := utils.GetCurrentUser(c).UserName
 		global.GES_LOG.Info("CasbinHandler", zap.Any("sub", sub), zap.Any("obj", obj), zap.Any("act", act))
 		e := casbinService.Casbin() // 判断策略中是否存在
 		e.EnableLog(true)

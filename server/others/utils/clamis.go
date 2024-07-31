@@ -75,7 +75,23 @@ func GetUserInfo(c *gin.Context) *systemReq.CustomClaims {
 func GetCurrentUser(c *gin.Context) *systemMod.SysExamUser {
 
 	// 获取名为 "example_cookie" 的 cookie
-	cookie, err := c.Cookie("studentUserName")
+	var cookie string
+	var err error
+	// 先检查 adminUserName cookie
+	cookie, err = c.Cookie("adminUserName")
+	if err != nil {
+		// 如果 adminUserName 不存在，则检查 studentUserName cookie
+		cookie, err = c.Cookie("studentUserName")
+	}
+
+	if err != nil {
+		// 如果两个 cookie 都不存在，返回错误
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "No valid user cookie found",
+		})
+		return nil
+	}
+
 	global.GES_LOG.Info("cookie1", zap.Any("cookie", err))
 	if err != nil {
 		if err == http.ErrNoCookie {
