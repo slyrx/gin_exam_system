@@ -444,3 +444,13 @@ func (e *ExamPaperService) AssignPaperVisibility(req request.AssignPaperVisibili
 
 	return nil
 }
+
+func (e *ExamPaperService) AssignExamPaperToStudent(examPaperID uint, studentID uint, assignedBy uint) error {
+	assignment := &systemMod.ExamPaperAssignment{
+		ExamPaperID: examPaperID,
+		StudentID:   studentID,
+		AssignedBy:  assignedBy,
+		CreatedAt:   time.Now(),
+	}
+	return global.GES_DB.Create(assignment).Error
+}

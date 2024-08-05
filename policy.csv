@@ -14,5 +14,8 @@ p, teacher3, /api/admin/question/page, POST
 p, teacher3, /api/admin/question/select/*, POST
 p, teacher3, /api/admin/question/edit, POST
 p, teacher3, /api/admin/question/delete/*, POST
+p, std1, /api/student/exam/paper/pageList, POST
+p, yiyi, /api/student/exam/paper/pageList, POST
 g, teacher2, admin
-g, std1, user
+g, std1, student
+g, yiyi, student

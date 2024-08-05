@@ -45,6 +45,13 @@ func (e *ExamPaperApi) SetExamPaper(c *gin.Context) {
 		return
 	}
 
+	// 添加指定关系
+	// err = examPaperService.AssignExamPaperToStudent(uint(paperID), 2, uint(userID))
+	// if err != nil {
+	// 	response.FailWithMessage(err.Error(), c)
+	// 	return
+	// }
+
 	response.OkWithMessageExamInterface(sysModRes.CreateExamPaperResponse{
 		ID:            paperID,
 		Level:         req.Level,

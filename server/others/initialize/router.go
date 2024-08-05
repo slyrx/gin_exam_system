@@ -87,6 +87,7 @@ func Routers() *gin.Engine {
 		systemRouter.InitExamRouter(ExamGroup)                           // 考试相关路由
 		systemRouter.InitQuestionRouter(ExamGroup)                       // 考试相关路由
 		systemRouter.InitExamPaperRouter(ExamGroup)                      // 考试相关路由
+		systemRouter.InitExamPaperStdRouter(ExamGroup)                   // 考试相关路由
 		systemRouter.InitBaseRouter(ExamGroup)                           // 注册基础功能路由 不做鉴权
 		systemRouter.InitJavaProxyUserRouter(ExamGroup)                  // 考试相关路由
 		systemRouter.InitJavaProxyEducationRouter(ExamGroup)             // 考试相关路由

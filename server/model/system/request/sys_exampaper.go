@@ -1,5 +1,11 @@
 package request
 
+import (
+	"encoding/json"
+	"errors"
+	"strconv"
+)
+
 type CreateExamPaperRequest struct {
 	ID            *int        `json:"id"`
 	Level         int         `json:"level"`
@@ -61,4 +67,34 @@ type CreateErrorQuestionPaperRequest struct {
 type AssignPaperVisibilityRequest struct {
 	PaperID uint   `json:"paperId" binding:"required"`
 	UserIDs []uint `json:"userIds" binding:"required"`
+}
+
+type PageListRequest struct {
+	PaperType int       `json:"paperType"`
+	SubjectID SubjectID `json:"subjectId"`
+	PageIndex int       `json:"pageIndex"`
+	PageSize  int       `json:"pageSize"`
+}
+
+type SubjectID int
+
+func (s *SubjectID) UnmarshalJSON(data []byte) error {
+	var intID int
+	var stringID string
+
+	if err := json.Unmarshal(data, &intID); err == nil {
+		*s = SubjectID(intID)
+		return nil
+	}
+
+	if err := json.Unmarshal(data, &stringID); err == nil {
+		id, err := strconv.Atoi(stringID)
+		if err != nil {
+			return err
+		}
+		*s = SubjectID(id)
+		return nil
+	}
+
+	return errors.New("invalid subject ID")
 }

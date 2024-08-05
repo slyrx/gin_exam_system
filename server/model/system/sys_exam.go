@@ -160,3 +160,15 @@ type PaperVisibility struct {
 func (PaperVisibility) TableName() string {
 	return "t_paper_visibility"
 }
+
+type ExamPaperAssignment struct {
+	ID          uint      `gorm:"primaryKey"`
+	ExamPaperID uint      `gorm:"not null"`
+	StudentID   uint      `gorm:"not null"`
+	AssignedBy  uint      `gorm:"not null"` // 分配者ID
+	CreatedAt   time.Time `gorm:"autoCreateTime"`
+}
+
+func (ExamPaperAssignment) TableName() string {
+	return "t_paper_visibility"
+}

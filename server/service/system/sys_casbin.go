@@ -183,7 +183,7 @@ func (casbinService *CasbinService) Casbin() *casbin.SyncedCachedEnforcer {
 		e = some(where (p.eft == allow))
 		
 		[matchers]
-		m = r.sub == p.sub && keyMatch2(r.obj, p.obj) && (r.act == p.act || p.act == "*")
+		m = g(r.sub, p.sub) && keyMatch2(r.obj, p.obj) && (r.act == p.act || p.act == "*")
 		`
 		m, err := model.NewModelFromString(text)
 		if err != nil {
