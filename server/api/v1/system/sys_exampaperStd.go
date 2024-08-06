@@ -102,10 +102,12 @@ func (h *ExamPaperStdApi) GetExamPaperPageList_1(c *gin.Context) {
 
 	// 修改查询逻辑，加入 t_exam_paper_assignment 关系
 	query := global.GES_DB.Debug().Table("t_exam_paper ep").
-		Joins("JOIN t_exam_paper_assignment epa ON ep.id = epa.exam_paper_id").
-		Where("ep.paper_type = ? AND ep.subject_id = ? AND epa.student_id = ?", req.PaperType, subjectID, studentID)
+		Select("*").
+		Joins("LEFT JOIN t_exam_paper_assignment epa ON ep.id = epa.exam_paper_id").
+		Where("ep.paper_type = ? AND ep.subject_id = ?", req.PaperType, subjectID).
+		Where("ep.create_user = 2 OR epa.student_id = ?", studentID)
 
-	// 查询总数
+		// 查询总数
 	if err := query.Count(&total).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, systemResponse.PageListResponse{Code: 0, Message: "查询失败"})
 		return
