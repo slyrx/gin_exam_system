@@ -7,4 +7,5 @@ type ServiceGroup struct {
 	ExamService
 	QuestionService
 	ExamPaperService
+	ExamPaperStdService
 }

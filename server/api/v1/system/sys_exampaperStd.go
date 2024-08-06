@@ -157,3 +157,23 @@ func (h *ExamPaperStdApi) GetExamPaperPageList_1(c *gin.Context) {
 		NavigatePageNums: []int{req.PageIndex},
 	}, c)
 }
+
+func (h *ExamPaperStdApi) AssignExamPaper(c *gin.Context) {
+	adminID, _ := c.Get("userID")
+	var req struct {
+		ExamPaperID uint `json:"examPaperID" binding:"required"`
+		StudentID   uint `json:"studentID" binding:"required"`
+	}
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	err := examPaperStdService.AssignExamPaperToStudent(req.ExamPaperID, req.StudentID, adminID.(uint))
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to assign exam paper"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "Exam paper assigned successfully"})
+}

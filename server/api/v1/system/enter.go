@@ -13,9 +13,10 @@ type ApiGroup struct {
 }
 
 var (
-	userService      = service.ServiceGroupApp.SystemServiceGroup.UserService
-	jwtService       = service.ServiceGroupApp.SystemServiceGroup.JwtService
-	examService      = service.ServiceGroupApp.SystemServiceGroup.ExamService
-	questionService  = service.ServiceGroupApp.SystemServiceGroup.QuestionService
-	examPaperService = service.ServiceGroupApp.SystemServiceGroup.ExamPaperService
+	userService         = service.ServiceGroupApp.SystemServiceGroup.UserService
+	jwtService          = service.ServiceGroupApp.SystemServiceGroup.JwtService
+	examService         = service.ServiceGroupApp.SystemServiceGroup.ExamService
+	questionService     = service.ServiceGroupApp.SystemServiceGroup.QuestionService
+	examPaperService    = service.ServiceGroupApp.SystemServiceGroup.ExamPaperService
+	examPaperStdService = service.ServiceGroupApp.SystemServiceGroup.ExamPaperStdService
 )

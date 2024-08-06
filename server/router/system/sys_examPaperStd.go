@@ -12,5 +12,6 @@ func (s *ExamPaperRouter) InitExamPaperStdRouter(Router *gin.RouterGroup) {
 	examPaperStdApi := v1.ApiGroupApp.SystemApiGroup.ExamPaperStdApi
 	{
 		examPaperStdRouter.POST("paper/pageList", examPaperStdApi.GetExamPaperPageList_1)
+		examPaperStdRouter.POST("paper/assign", examPaperStdApi.AssignExamPaper)
 	}
 }
