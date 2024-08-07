@@ -1,6 +1,9 @@
 package system
 
 import (
+	"encoding/json"
+	"errors"
+	"strconv"
 	"time"
 
 	"github.com/gofrs/uuid/v5"
@@ -30,24 +33,24 @@ func (SysUser) TableName() string {
 
 // TUser represents a user in the t_user table
 type SysExamUser struct {
-	ID             int       `gorm:"column:id;primary_key;auto_increment"`
-	UserUUID       string    `gorm:"column:user_uuid;size:36"`
-	UserName       string    `gorm:"column:user_name;size:255"`
-	Password       string    `gorm:"column:password;size:255"`
-	RealName       string    `gorm:"column:real_name;size:255"`
-	Age            int       `gorm:"column:age"`
-	Sex            int       `gorm:"column:sex"`
-	BirthDay       time.Time `gorm:"column:birth_day"`
-	UserLevel      int       `gorm:"column:user_level"`
-	Phone          string    `gorm:"column:phone;size:255"`
-	Role           int       `gorm:"column:role"`
-	Status         int       `gorm:"column:status"`
-	ImagePath      string    `gorm:"column:image_path;size:255"`
-	CreateTime     time.Time `gorm:"column:create_time"`
-	ModifyTime     time.Time `gorm:"column:modify_time"`
-	LastActiveTime time.Time `gorm:"column:last_active_time"`
-	Deleted        []byte    `gorm:"column:deleted"`
-	WxOpenID       string    `gorm:"column:wx_open_id;size:255"`
+	ID             int        `gorm:"column:id;primary_key;auto_increment"`
+	UserUUID       string     `gorm:"column:user_uuid;size:36"`
+	UserName       string     `gorm:"column:user_name;size:255"`
+	Password       string     `gorm:"column:password;size:255"`
+	RealName       string     `gorm:"column:real_name;size:255"`
+	Age            int        `gorm:"column:age"`
+	Sex            int        `gorm:"column:sex"`
+	BirthDay       *time.Time `gorm:"column:birth_day"`
+	UserLevel      int        `gorm:"column:user_level"`
+	Phone          string     `gorm:"column:phone;size:255"`
+	Role           int        `gorm:"column:role"`
+	Status         int        `gorm:"column:status"`
+	ImagePath      string     `gorm:"column:image_path;size:255"`
+	CreateTime     *time.Time `gorm:"column:create_time"`
+	ModifyTime     *time.Time `gorm:"column:modify_time"`
+	LastActiveTime *time.Time `gorm:"column:last_active_time"`
+	Deleted        []byte     `gorm:"column:deleted"`
+	WxOpenID       string     `gorm:"column:wx_open_id;size:255"`
 }
 
 // TableName specifies the table name for TUser struct
@@ -221,4 +224,45 @@ type UserQuestionError struct {
 
 func (UserQuestionError) TableName() string {
 	return "t_user_question_errors"
+}
+
+type AdminStudentRelation struct {
+	ID        uint      `gorm:"primaryKey"`
+	AdminID   uint      `gorm:"column:admin_id;not null"`
+	StudentID uint      `gorm:"column:student_id;not null"`
+	CreatedAt time.Time `gorm:"column:created_at"`
+	UpdatedAt time.Time `gorm:"column:updated_at"`
+}
+
+// 指定表名
+func (AdminStudentRelation) TableName() string {
+	return "t_admin_student_relation"
+}
+
+type SubjectID int
+
+func (s *SubjectID) UnmarshalJSON(data []byte) error {
+	var intID int
+	var stringID string
+
+	if err := json.Unmarshal(data, &intID); err == nil {
+		*s = SubjectID(intID)
+		return nil
+	}
+
+	if err := json.Unmarshal(data, &stringID); err == nil {
+		if stringID != "" {
+			id, err := strconv.Atoi(stringID)
+			if err != nil {
+				return err
+			}
+			*s = SubjectID(id)
+			return nil
+		} else {
+			return nil
+		}
+
+	}
+
+	return errors.New("invalid subject ID")
 }

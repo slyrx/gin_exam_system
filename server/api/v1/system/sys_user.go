@@ -1,15 +1,16 @@
 package system
 
 import (
+	"net/http"
+	"time"
+
 	"github.com/gin-gonic/gin"
 	"github.com/slyrx/gin_exam_system/server/others/global"
 	"github.com/slyrx/gin_exam_system/server/others/utils"
-	"time"
 
 	systemReq "github.com/slyrx/gin_exam_system/server/model/system/request"
 	systemRes "github.com/slyrx/gin_exam_system/server/model/system/response"
 
-	// "github.com/slyrx/gin_exam_system/server/model/common/request"
 	"github.com/slyrx/gin_exam_system/server/model/common/response"
 
 	"github.com/redis/go-redis/v9"
@@ -126,4 +127,66 @@ func (b *BaseApi) TokenNext(c *gin.Context, user system.SysUser) {
 			ExpiresAt: claims.RegisteredClaims.ExpiresAt.Unix() * 1000,
 		}, "登录成功", c)
 	}
+}
+
+func (b *BaseApi) CreateUser(c *gin.Context) {
+	var req struct {
+		UserName  string            `json:"userName" binding:"required"`
+		Password  string            `json:"password" binding:"required"`
+		RealName  string            `json:"realName"`
+		Role      int               `json:"role" binding:"required"`
+		Status    int               `json:"status" binding:"required"`
+		Age       *string           `json:"age"`
+		Sex       *system.SubjectID `json:"sex"`
+		BirthDay  *string           `json:"birthDay"`
+		Phone     *string           `json:"phone"`
+		UserLevel *int              `json:"userLevel"`
+	}
+
+	if err := c.ShouldBindJSON(&req); err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+
+	user := &system.SysExamUser{
+		UserName: req.UserName,
+		Password: req.Password,
+		RealName: req.RealName,
+		Role:     req.Role,
+		Status:   req.Status,
+		Deleted:  []byte{0},
+	}
+
+	if req.UserLevel != nil {
+		user.UserLevel = *req.UserLevel
+	}
+
+	// Handle optional fields
+	if req.Age != nil {
+		age := 0
+		user.Age = age
+	}
+	if req.Sex != nil {
+		user.Sex = int(*req.Sex)
+	}
+	if req.BirthDay != nil {
+		// Parse birthDay string to time.Time if needed
+	}
+	if req.Phone != nil {
+		user.Phone = *req.Phone
+	}
+
+	if err := userService.CreateUser(user); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"code": 0, "message": "用户创建失败", "response": nil})
+		return
+	}
+
+	// 向绑定关系表增加一条记录
+	err := userService.AddOrUpdateAdminStudentRelation(uint(user.ID), user.RealName)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+
+	response.OkWithMessageExam("成功", c)
 }
