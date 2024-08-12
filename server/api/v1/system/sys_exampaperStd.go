@@ -104,7 +104,7 @@ func (h *ExamPaperStdApi) GetExamPaperPageList_1(c *gin.Context) {
 	query := global.GES_DB.Debug().Table("t_exam_paper ep").
 		Select("*").
 		Joins("LEFT JOIN t_exam_paper_assignment epa ON ep.id = epa.exam_paper_id").
-		Where("ep.paper_type = ? AND ep.subject_id = ?", req.PaperType, subjectID).
+		Where("ep.paper_type = ? AND ep.subject_id = ? and ep.deleted = 0", req.PaperType, subjectID).
 		Where("ep.create_user = 2 OR epa.student_id = ?", studentID)
 
 		// 查询总数
